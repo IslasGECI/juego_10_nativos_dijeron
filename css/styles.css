@@ -78,6 +78,9 @@ h2{
     align-items: center;
     width: 450px;
 }
+.controls .controls_round{
+    margin: 0;
+}
 .controls button{
     position: relative;
     width: 32px;
