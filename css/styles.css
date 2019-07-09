@@ -72,11 +72,17 @@ h2{
 #center_board span{
     margin-left: 300px;
 }
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+}
 .controls button{
     position: relative;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
     border-radius: 50%;
     border: solid 1px #073975;
     overflow: hidden;
