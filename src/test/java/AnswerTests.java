@@ -10,6 +10,7 @@ import mx.org.islas.models.*;
  */
 public class AnswerTests {
     final String answerText = "Pardela";
+    // Variable que contiene la cantidad de personas que contestaron la respuesta de prueba
     final int count = 4;
     private Answer answer;
 
