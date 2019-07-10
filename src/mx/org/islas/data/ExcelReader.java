@@ -66,9 +66,45 @@ public class ExcelReader{
         }
 
         //Recorre todas los renglones y columnas en una hoja
-                    
+        Sheet sheet2 = workbook.getSheetAt(1);
+
+        System.out.println("Recorriendo columnas y renglones");
+        int rowNumber2 = 0;
+        Iterator<Row> rowIterator2 = sheet2.rowIterator();
+        while(rowIterator2.hasNext()){
+            Row row2 = rowIterator2.next();
+
+            // Se salta los encabezados de las columnas
+            if(rowNumber2 == 0) {
+                rowNumber2++;
+                continue;
+            }
+            //Itera las columnas del renglon actual
+            Iterator<Cell> cellIterator2 = row2.cellIterator();
+            int cellIndex2 = 0;
+            int id2 = 0, score = 0, i = 0;
+            String answer_string = "";
+            Question question_object2 = null;
+            Answer answer_object = null;
+            ArrayList<Answer> answer_list = new ArrayList<Answer>();
+            while(cellIterator2.hasNext()){
+                Cell cell2 = cellIterator2.next();
+                String cellValue2 = dataFormatter.formatCellValue(cell2);
+                if (cellIndex2 == 0){
+                    id2 = Integer.parseInt(cellValue2);
+                    if(id2 == question_list.get(i).getId()){
+                        question_object2 = question_list.get(i);
+                        answer_object = new Answer(answer_string, score);
+                        question_object2.addAnswer(answer_object);
+                        System.out.println(answer_object.getAnswer() + " " + answer_object.getCount());
+                    }
+                }else if (cellIndex2 == 1){
+                    answer_string = cellValue2;
+                }else if (cellIndex2 == 2){
+                    score = Integer.parseInt(cellValue2);
                 }
-                System.out.print(cellValue + "\t");
+                cellIndex2++;
+                i++;
             }
         }
         //Se cierra el libro
