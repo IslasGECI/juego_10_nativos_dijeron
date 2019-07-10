@@ -1,0 +1,98 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+.container{
+    width: 950px;
+    height: 500px;
+}
+body{
+    background: black;
+    color: white;
+    font-family: Century Gothic;
+}
+#oval{
+    width: 900px;
+    height: 630px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border:10px solid #073975;
+    border-radius: 50%;
+    background: url(../img/neon_dots.jpg);
+    margin-bottom: 20px;
+}
+#center_board{
+    width: 550px;
+    height: 380px;
+    border:10px solid #073975;
+    float: left;
+    position: relative;
+    border-radius: 20px;
+    margin: 5px;
+}
+.score_board{
+    width: 120px;
+    height: 100px;
+    border:10px solid gray;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+.score_board p{
+    text-align: center;
+    font-size: 50px;
+}
+#left_score, #right_score, #center_board{
+    float: left;
+    background: black;
+}
+
+#right_score, #left_score{
+    top: 120px;
+    margin: 5px;
+}
+#center_score{
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+h2{
+    text-align: center;
+    font-size: 30px;
+    margin: 20px 10px 30px 10px;
+    font-weight: 200;
+}
+#center_board p{
+    display: inline-block;
+    margin: 15px 50px;
+    text-align: center;
+}
+#center_board span{
+    margin-left: 300px;
+}
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+}
+.controls .controls_round{
+    margin: 0;
+}
+.controls button{
+    position: relative;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+    border: solid 1px #073975;
+    overflow: hidden;
+    color: white;
+    font-size: 16px;
+    background: #073975;
+    cursor: pointer;
+    transition: .4s;
+    margin: 0 5px;
+}
