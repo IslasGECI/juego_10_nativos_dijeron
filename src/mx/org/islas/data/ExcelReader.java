@@ -45,23 +45,31 @@ public class ExcelReader{
                 rowNumber++;
                 continue;
             }
-
             //Itera las columnas del renglon actual
             Iterator<Cell> cellIterator = row.cellIterator();
-
-            Question question_object;
-
             int cellIndex = 0;
+            int id = 0;
+            String question_string = "";
             while(cellIterator.hasNext()){
                 Cell cell = cellIterator.next();
                 String cellValue = dataFormatter.formatCellValue(cell);
-
                 if (cellIndex == 0){
+                    id = Integer.parseInt(cellValue);
+                }else if (cellIndex ==1){
+                    question_string = cellValue;
+                }
+                cellIndex++;
+            }
+            Question question_object = new Question(id,question_string);
+            question_list.add(question_object);
+            System.out.println(question_object.getId() + " " + question_object.getQuestion());
+        }
+
+        //Recorre todas los renglones y columnas en una hoja
                     
                 }
                 System.out.print(cellValue + "\t");
             }
-            System.out.println();
         }
         //Se cierra el libro
         workbook.close();
