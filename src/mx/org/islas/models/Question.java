@@ -52,4 +52,12 @@ public class Question {
     public String getQuestion() {
         return this.question;
     }
+
+    /**
+     * Función para obtener el arreglo de respuestas asociadas a la pregunta
+     * @return Lista de respuestas asociadas a la pregunta
+     */
+    public ArrayList<Answer> getAnswers() {
+        return this.answers;
+    }
 }
