@@ -5,21 +5,33 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import mx.org.islas.models.*;
 
+/**
+ * Clase para probar la clase Answer
+ */
 public class AnswerTests {
-    final String respuesta = "fd";
+    final String answerText = "Pardela";
     final int count = 4;
     private Answer answer;
 
+    /**
+     * Método que se ejecuta al iniciar cada una de las pruebas
+     */
     @BeforeMethod
     public void setUp() {
-        answer = new Answer(respuesta, count);
+        answer = new Answer(answerText, count);
     }
 
+    /**
+     * Prueba que verifica que se obtenga el texto de la respeusta de forma correcta
+     */
     @Test
     public void getAnswer() {
-        Assert.assertEquals(answer.getAnswer(), respuesta);;
+        Assert.assertEquals(answer.getAnswer(), answerText);;
     }
 
+    /**
+     * Prueba que verifica que se obtenga la cantidad de personas que contestaron esto de manera correcta
+     */
     @Test
     public void getCount() {
         Assert.assertEquals(answer.getCount(), count);
