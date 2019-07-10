@@ -1,3 +1,5 @@
+package mx.org.islas.data;
+
 import mx.org.islas.models.Question;
 import org.apache.commons.compress.archivers.dump.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
@@ -30,7 +32,7 @@ public class ExcelReader{
         //Crea formato para los datos para que al obtener cada valor de una celda como String
         DataFormatter dataFormatter = new DataFormatter();
 
-        ArrayList<Question> questions = new ArrayList<Question>();
+        ArrayList<Question> question_list = new ArrayList<Question>();
 
         System.out.println("Recorriendo columnas y renglones");
         int rowNumber = 0;
@@ -47,9 +49,16 @@ public class ExcelReader{
             //Itera las columnas del renglon actual
             Iterator<Cell> cellIterator = row.cellIterator();
 
+            Question question_object;
+
+            int cellIndex = 0;
             while(cellIterator.hasNext()){
                 Cell cell = cellIterator.next();
                 String cellValue = dataFormatter.formatCellValue(cell);
+
+                if (cellIndex == 0){
+                    
+                }
                 System.out.print(cellValue + "\t");
             }
             System.out.println();
