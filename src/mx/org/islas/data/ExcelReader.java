@@ -9,14 +9,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class ExcelReader{
-    public static final String FILE_PATH = "src/Juego.xlsx";
 
     /**
      * Método que se encarga de leer las preguntas desde el archivo
      * @param workbook Workbook donde se encuentran las preguntas
      * @return Lista de preguntas cargadas desde el archivo
      */
-    public ArrayList<Question> readQuestions(Workbook workbook) {
+    private static ArrayList<Question> readQuestions(Workbook workbook) {
         ArrayList<Question> question_list = new ArrayList<Question>();
         Sheet questionsSheet = workbook.getSheetAt(0);
         Iterator<Row> rowIterator = questionsSheet.rowIterator();
@@ -32,7 +31,7 @@ public class ExcelReader{
      * @param row Renglón de datos
      * @return Pregunta construida a partir de los datos del renglón
      */
-    private Question questionFromRow(Row row) {
+    private static Question questionFromRow(Row row) {
         DataFormatter dataFormatter = new DataFormatter();
         Cell indexCell = row.getCell(0);
         String cellValue = dataFormatter.formatCellValue(indexCell);
@@ -47,7 +46,7 @@ public class ExcelReader{
      * @param workbook Workbook donde se encuentran las preguntas
      * @return Lisra de respuestas cargadas desde el archivo
      */
-    public ArrayList<Answer> readAnswers(Workbook workbook) {
+    private static ArrayList<Answer> readAnswers(Workbook workbook) {
         ArrayList<Answer> answer_list = new ArrayList<Answer>();
         Sheet answerSheet = workbook.getSheetAt(1);
         Iterator<Row> rowIterator = answerSheet.rowIterator();
@@ -63,7 +62,7 @@ public class ExcelReader{
      * @param row Renglón de datos
      * @return Respuesta construida a partir de los datos del renglón
      */
-    private Answer answerFromRow(Row row) {
+    private static Answer answerFromRow(Row row) {
         DataFormatter dataFormatter = new DataFormatter();
         Cell idCell = row.getCell(0);
         String idValue = dataFormatter.formatCellValue(idCell);
@@ -81,7 +80,7 @@ public class ExcelReader{
      * @param questions Lista de preguntas donde se agregarán las respuestas
      * @param answers Lista de respuestas a agregar
      */
-    private void populateQuestionWithAnswers(ArrayList<Question> questions, ArrayList<Answer> answers) {
+    private static void populateQuestionWithAnswers(ArrayList<Question> questions, ArrayList<Answer> answers) {
         for(Answer answer : answers) {
             questions.get(answer.getQuestionID()-1).addAnswer(answer);
         }
@@ -94,7 +93,7 @@ public class ExcelReader{
      * @throws IOException No existe el archivo
      * @throws InvalidFormatException No es el formato adecuado del archivo
      */
-    public ArrayList<Question> loadQuestions(String file_path) throws IOException, InvalidFormatException {
+    public static ArrayList<Question> loadQuestions(String file_path) throws IOException, InvalidFormatException {
         Workbook workbook = WorkbookFactory.create(new File(file_path));
         ArrayList<Question> questions = readQuestions(workbook);
         ArrayList<Answer> answers = readAnswers(workbook);
