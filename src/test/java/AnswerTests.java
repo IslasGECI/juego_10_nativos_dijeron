@@ -8,11 +8,12 @@ import mx.org.islas.models.*;
 public class AnswerTests {
     final String respuesta = "fd";
     final int count = 4;
+    final int questionID = 1;
     private Answer answer;
 
     @BeforeMethod
     public void setUp() {
-        answer = new Answer(respuesta, count);
+        answer = new Answer(questionID, respuesta, count);
     }
 
     @Test

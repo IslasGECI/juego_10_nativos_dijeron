@@ -27,7 +27,7 @@ public class QuestionTest {
 
     @Test
     public void getAnswerNumber() {
-        Answer answer = new Answer("ratones", 5);
+        Answer answer = new Answer(1, "ratones", 5);
         question.addAnswer(answer);
         Assert.assertEquals(question.getAnswerNumber(), 1);
     }
