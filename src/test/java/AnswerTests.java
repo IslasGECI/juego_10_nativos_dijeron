@@ -20,7 +20,7 @@ public class AnswerTests {
      */
     @BeforeMethod
     public void setUp() {
-        answer = new Answer(questionID, respuesta, count);
+        this.answer = new Answer(questionID, answerText, count);
     }
 
     /**
