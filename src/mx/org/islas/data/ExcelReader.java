@@ -1,113 +1,105 @@
 package mx.org.islas.data;
 
-import mx.org.islas.models.Question;
+import mx.org.islas.models.*;
 import org.apache.commons.compress.archivers.dump.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+
 public class ExcelReader{
     public static final String FILE_PATH = "src/Juego.xlsx";
 
-    public static void main (String args []) throws IOException, InvalidFormatException {
-
-        //Se crea un libro de excel con lo que se encuentra en el archivo
-        Workbook workbook = WorkbookFactory.create(new File(FILE_PATH));
-
-        //Se tiene el numero de hojas del archivo excel
-        System.out.println("El libro tiene " + workbook.getNumberOfSheets() + " hojas : ");
-
-        //Itera todas las hojas y obtiene el nombre de las hojas
-        System.out.println("Obteniendo hojas usando Iterator");
-        Iterator<Sheet> sheetIterator = workbook.sheetIterator();
-        while (sheetIterator.hasNext()) {
-            Sheet sheet = sheetIterator.next();
-            System.out.println("=> " + sheet.getSheetName());
-        }
-
-        //Recorre todas los renglones y columnas en una hoja
-        Sheet sheet = workbook.getSheetAt(0);
-
-        //Crea formato para los datos para que al obtener cada valor de una celda como String
-        DataFormatter dataFormatter = new DataFormatter();
-
+    /**
+     * Método que se encarga de leer las preguntas desde el archivo
+     * @param workbook Workbook donde se encuentran las preguntas
+     * @return Lista de preguntas cargadas desde el archivo
+     */
+    public ArrayList<Question> readQuestions(Workbook workbook) {
         ArrayList<Question> question_list = new ArrayList<Question>();
-
-        System.out.println("Recorriendo columnas y renglones");
-        int rowNumber = 0;
-        Iterator<Row> rowIterator = sheet.rowIterator();
+        Sheet questionsSheet = workbook.getSheetAt(0);
+        Iterator<Row> rowIterator = questionsSheet.rowIterator();
+        rowIterator.next();
         while(rowIterator.hasNext()){
-            Row row = rowIterator.next();
-
-            // Se salta los encabezados de las columnas
-            if(rowNumber == 0) {
-                rowNumber++;
-                continue;
-            }
-            //Itera las columnas del renglon actual
-            Iterator<Cell> cellIterator = row.cellIterator();
-            int cellIndex = 0;
-            int id = 0;
-            String question_string = "";
-            while(cellIterator.hasNext()){
-                Cell cell = cellIterator.next();
-                String cellValue = dataFormatter.formatCellValue(cell);
-                if (cellIndex == 0){
-                    id = Integer.parseInt(cellValue);
-                }else if (cellIndex ==1){
-                    question_string = cellValue;
-                }
-                cellIndex++;
-            }
-            Question question_object = new Question(id,question_string);
-            question_list.add(question_object);
-            System.out.println(question_object.getId() + " " + question_object.getQuestion());
+            question_list.add(questionFromRow(rowIterator.next()));
         }
+        return question_list;
+    }
 
-        //Recorre todas los renglones y columnas en una hoja
-        Sheet sheet2 = workbook.getSheetAt(1);
+    /**
+     * Método para construir una pregunta a partir de un renglón del excel
+     * @param row Renglón de datos
+     * @return Pregunta construida a partir de los datos del renglón
+     */
+    private Question questionFromRow(Row row) {
+        DataFormatter dataFormatter = new DataFormatter();
+        Cell indexCell = row.getCell(0);
+        String cellValue = dataFormatter.formatCellValue(indexCell);
+        int id = Integer.parseInt(cellValue);
+        Cell questionCell = row.getCell(1);
+        String questionValue = dataFormatter.formatCellValue(questionCell);
+        return new Question(id, questionValue);
+    }
 
-        System.out.println("Recorriendo columnas y renglones");
-        int rowNumber2 = 0;
-        Iterator<Row> rowIterator2 = sheet2.rowIterator();
-        while(rowIterator2.hasNext()){
-            Row row2 = rowIterator2.next();
-
-            // Se salta los encabezados de las columnas
-            if(rowNumber2 == 0) {
-                rowNumber2++;
-                continue;
-            }
-            //Itera las columnas del renglon actual
-            Iterator<Cell> cellIterator2 = row2.cellIterator();
-            int cellIndex2 = 0;
-            int id2 = 0, score = 0, i = 0;
-            String answer_string = "";
-            Question question_object2 = null;
-            Answer answer_object = null;
-            ArrayList<Answer> answer_list = new ArrayList<Answer>();
-            while(cellIterator2.hasNext()){
-                Cell cell2 = cellIterator2.next();
-                String cellValue2 = dataFormatter.formatCellValue(cell2);
-                if (cellIndex2 == 0){
-                    id2 = Integer.parseInt(cellValue2);
-                    if(id2 == question_list.get(i).getId()){
-                        question_object2 = question_list.get(i);
-                        answer_object = new Answer(answer_string, score);
-                        question_object2.addAnswer(answer_object);
-                        System.out.println(answer_object.getAnswer() + " " + answer_object.getCount());
-                    }
-                }else if (cellIndex2 == 1){
-                    answer_string = cellValue2;
-                }else if (cellIndex2 == 2){
-                    score = Integer.parseInt(cellValue2);
-                }
-                cellIndex2++;
-                i++;
-            }
+    /**
+     * Método que se encarga de leer las preguntas desde el archivo
+     * @param workbook Workbook donde se encuentran las preguntas
+     * @return Lisra de respuestas cargadas desde el archivo
+     */
+    public ArrayList<Answer> readAnswers(Workbook workbook) {
+        ArrayList<Answer> answer_list = new ArrayList<Answer>();
+        Sheet answerSheet = workbook.getSheetAt(1);
+        Iterator<Row> rowIterator = answerSheet.rowIterator();
+        rowIterator.next();
+        while(rowIterator.hasNext()){
+            answer_list.add(answerFromRow(rowIterator.next()));
         }
-        //Se cierra el libro
+        return answer_list;
+    }
+
+    /**
+     * Método para construir una respeusta a partir de un renglón de datos
+     * @param row Renglón de datos
+     * @return Respuesta construida a partir de los datos del renglón
+     */
+    private Answer answerFromRow(Row row) {
+        DataFormatter dataFormatter = new DataFormatter();
+        Cell idCell = row.getCell(0);
+        String idValue = dataFormatter.formatCellValue(idCell);
+        int idQuestion = Integer.parseInt(idValue);
+        Cell answerCell = row.getCell(1);
+        String answerValue = dataFormatter.formatCellValue(answerCell);
+        Cell countCell = row.getCell(2);
+        String countValue = dataFormatter.formatCellValue(countCell);
+        int count = Integer.parseInt(countValue);
+        return new Answer(idQuestion, answerValue, count);
+    }
+
+    /**
+     * Método encargado de agregar las respuestas a las preguntas correspondientes
+     * @param questions Lista de preguntas donde se agregarán las respuestas
+     * @param answers Lista de respuestas a agregar
+     */
+    private void populateQuestionWithAnswers(ArrayList<Question> questions, ArrayList<Answer> answers) {
+        for(Answer answer : answers) {
+            questions.get(answer.getQuestionID()-1).addAnswer(answer);
+        }
+    }
+
+    /**
+     * Método que se encarga de leer el archivo de datos
+     * @param file_path Dirección al archivo de datos
+     * @return Lista de preguntas cargadas desde el archivo de datos
+     * @throws IOException No existe el archivo
+     * @throws InvalidFormatException No es el formato adecuado del archivo
+     */
+    public ArrayList<Question> loadQuestions(String file_path) throws IOException, InvalidFormatException {
+        Workbook workbook = WorkbookFactory.create(new File(file_path));
+        ArrayList<Question> questions = readQuestions(workbook);
+        ArrayList<Answer> answers = readAnswers(workbook);
+        populateQuestionWithAnswers(questions, answers);
         workbook.close();
+        return questions;
     }
 }
