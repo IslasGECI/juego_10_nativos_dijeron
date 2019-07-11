@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import mx.org.islas.models.Question;
+import mx.org.islas.data.ExcelReader;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -15,16 +17,16 @@ import java.util.ArrayList;
 @RestController
 public class QuestionController {
 
+    public static final String FILE_PATH = "src/Juego.xlsx";
+
     /**
      * Método que regresar una pregunta cuando se haga la petición
      * @return JSON que representa una pregunta
      */
     @RequestMapping("/question/get")
-    public Question getQuestion(@RequestParam(value="exclude") ArrayList idToExclude) {
-        System.out.println(idToExclude);
-        Question q = new Question(1, "¿Cuál es el animal más común en Natividad");
-        q.addAnswer(new Answer("Pardela", 5));
-        return q;
+    public Question getQuestion(@RequestParam(value="idQuestion", defaultValue = "0") int idQuestion) throws IOException {
+        ArrayList<Question> questions = ExcelReader.loadQuestions(FILE_PATH);
+        return questions.get(idQuestion);
     }
 
     /**
