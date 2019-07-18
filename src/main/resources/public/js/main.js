@@ -4,11 +4,13 @@ $(window).on("load", function() {
     var numberOfQuestions;
     var roundScore = 0;
     var rightAudio = new Audio("sound/right-answer.mp3");
+    var newRoundAudio = new Audio("sound/new-round.mp3");
     async function main() {
         numberOfQuestions = await getCount();
         let firstQuestion = await getQuestion(actualQuestion);
         drawQuestion(firstQuestion);
         addListener2AnswerButtons();
+        go2NextQuestion();
     }
 
     /**
@@ -65,6 +67,40 @@ $(window).on("load", function() {
         }
     }
 
+    /**
+     * Función que va hacia la siguiente pregunta y agrega efecto de sonido 
+     * para nueva ronda
+     */
+    async function go2NextQuestion(){
+        $("#next_question").click(async function(){
+            actualQuestion++;
+            let newQuestion = await getQuestion(actualQuestion);
+            roundScore = 0;
+            removeHideClass("button");
+            newRoundAudio.play();
+            drawQuestion(newQuestion);
+            hideNextQuestionButton();
+        });
+    }
+    /**
+     * Función que remueve clase hide que se encuentra en el css
+     * @param {*} element elemento de html al que se le quiere
+     * remover la clase hide
+     */
+    function removeHideClass(element){
+        for (let i=1; i<6; i++){
+            $(`#${element}${i}`).removeClass("hide");
+        }
+    }
+    /**
+     * Función que oculta el botón de siguiente pregunta cuando
+     * el límite de preguntas por hacer, se ha alcanzado
+     */
+    function hideNextQuestionButton(){
+        if(actualQuestion < numberOfQuestions -1 ){
+            $("#next_question").addClass("hide");
+        }
+    }
     /**
      * Función que ordena las respuestas de las preguntas
      * @param {*} question es la pregunta a la que se le ordenarán
