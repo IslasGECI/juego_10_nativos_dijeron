@@ -4,6 +4,7 @@ $(window).on("load", function() {
     var numberOfQuestions;
     var roundScore = 0;
     var team1_score = 0, team2_score = 0;
+    var wrongAudio = new Audio("sound/wrong-answer.mp3");
     var rightAudio = new Audio("sound/right-answer.mp3");
     var newRoundAudio = new Audio("sound/new-round.mp3");
 
@@ -14,6 +15,7 @@ $(window).on("load", function() {
         addListener2AnswerButtons();
         go2NextQuestion();
         assignScore2Team();
+        errorAnswerMessage();
     }
 
     /**
@@ -111,6 +113,17 @@ $(window).on("load", function() {
         removeHideClass("answer");
         $("#center_score").html(`<p>${roundScore}</p>`);
         showNextQuestionButton();
+    }
+
+    /**
+     * Función que agrega listener a botón de respuesta incorrecta
+     * muestra imagen y reproduce sonido
+     */
+    function errorAnswerMessage(){
+        $("#wrong_answer").click(function (){
+            $("#error_image").show(1).delay(800).hide(1);
+             wrongAudio.play();
+        });
     }
 
     /**
