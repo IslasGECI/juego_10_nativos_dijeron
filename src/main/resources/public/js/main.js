@@ -3,14 +3,17 @@ $(window).on("load", function() {
     var actualQuestion = 0;
     var numberOfQuestions;
     var roundScore = 0;
+    var team1_score = 0, team2_score = 0;
     var rightAudio = new Audio("sound/right-answer.mp3");
     var newRoundAudio = new Audio("sound/new-round.mp3");
+
     async function main() {
         numberOfQuestions = await getCount();
         let firstQuestion = await getQuestion(actualQuestion);
         drawQuestion(firstQuestion);
         addListener2AnswerButtons();
         go2NextQuestion();
+        assignScore2Team();
     }
 
     /**
@@ -83,6 +86,44 @@ $(window).on("load", function() {
         });
     }
     /**
+     * Función que agrega listeners a los botones que asignan puntaje
+     * a los equipos
+     */
+    function assignScore2Team(){
+        $("#team_1").click(() => {
+            team1_score += roundScore;
+            updateScore(team1_score, "left_score");
+        });
+        $("#team_2").click(() => {
+            team2_score += roundScore;
+            updateScore(team2_score, "right_score");
+        });
+    }
+    /**
+     * Función que actualiza puntaje del equipo en el tablero
+     * @param {*} newScore nuevo puntaje para asignar a un equipo
+     * @param {*} idScoreTeam id del div que despliega puntaje 
+     */
+    function updateScore(newScore, idScoreTeam){        
+        $(`#${idScoreTeam}`).html(`<p>${newScore}</p>`);
+        roundScore = 0;
+        addHideClass("button");
+        removeHideClass("answer");
+        $("#center_score").html(`<p>${roundScore}</p>`);
+        showNextQuestionButton();
+    }
+
+    /**
+     * Función que agrega clase hide que se encuentra en el css
+     * @param {} element elemento al que se le quiere 
+     * agregar clase hide
+     */
+    function addHideClass(element){
+        for (let i=1; i<6; i++){
+            $(`#${element}${i}`).addClass("hide");
+        }
+    }
+    /**
      * Función que remueve clase hide que se encuentra en el css
      * @param {*} element elemento de html al que se le quiere
      * remover la clase hide
@@ -90,6 +131,14 @@ $(window).on("load", function() {
     function removeHideClass(element){
         for (let i=1; i<6; i++){
             $(`#${element}${i}`).removeClass("hide");
+        }
+    }
+    /**
+     * Función que  muestra el botón de siguiente pregunta
+     */
+    function showNextQuestionButton(){
+        if(actualQuestion < numberOfQuestions -1 ){
+            $("#next_question").removeClass("hide");
         }
     }
     /**
