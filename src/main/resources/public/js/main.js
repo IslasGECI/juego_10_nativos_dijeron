@@ -2,10 +2,13 @@ $(window).on("load", function() {
 
     var actualQuestion = 0;
     var numberOfQuestions;
+    var roundScore = 0;
+    var rightAudio = new Audio("sound/right-answer.mp3");
     async function main() {
         numberOfQuestions = await getCount();
         let firstQuestion = await getQuestion(actualQuestion);
         drawQuestion(firstQuestion);
+        addListener2AnswerButtons();
     }
 
     /**
@@ -44,6 +47,22 @@ $(window).on("load", function() {
                 resolve(count);
             });
         });
+    }
+
+    /**
+     * Función que agrega audio al seleccionar un botón de respuesta
+     * y muestra el puntaje acumulado en el tablero central
+     */
+    function addListener2AnswerButtons() {
+        for (let i=1; i<6; i++){
+            $(`#button${i}`).click(function (){
+                rightAudio.play();
+                $(`#answer-${i}`).delay(300).fadeIn(1000);
+                roundScore += parseInt($(`#answer-${i} span`).text());
+                $("#center_score").html(`<p>${roundScore}</p>`);
+                $(this).addClass("hide");
+            })
+        }
     }
 
     /**
