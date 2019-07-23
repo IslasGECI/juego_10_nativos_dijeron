@@ -164,7 +164,8 @@ $(window).on("load", function() {
         }
     }
     /**
-     * Función que ordena las respuestas de las preguntas
+     * Función que ordena las respuestas de las preguntas de acuerdo 
+     * a la cantidad de personas que dijeron una respuesta
      * @param {*} question es la pregunta a la que se le ordenarán
      * las respuestas
      */
