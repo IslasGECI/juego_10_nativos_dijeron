@@ -93,10 +93,12 @@ $(window).on("load", function() {
     function assignScore2Team(){
         $("#team_1").click(() => {
             team1_score += roundScore;
+            roundScore = 0;
             updateScore(team1_score, "left_score");
         });
         $("#team_2").click(() => {
             team2_score += roundScore;
+            roundScore = 0;
             updateScore(team2_score, "right_score");
         });
     }
