@@ -16,6 +16,7 @@ $(window).on("load", function() {
         go2NextQuestion();
         assignScore2Team();
         showErrorAnswerMessage();
+        setInitialScore2Boards();
     }
 
     /**
@@ -179,6 +180,14 @@ $(window).on("load", function() {
             }
                 return 0;
         });
+    }
+    /**
+     * Función que inicializa los puntajes de los tableros
+     */
+    function setInitialScore2Boards(){
+        $("#center_score").html(`<p>${roundScore}</p>`);
+        $("#left_score").html(`<p>${roundScore}</p>`);
+        $("#right_score").html(`<p>${roundScore}</p>`);
     }
 
     main();
