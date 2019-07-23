@@ -33,7 +33,8 @@ public class QuestionController {
      * @return Cantidad de preguntas disponibles
      */
     @RequestMapping("/question/count")
-    public int getQuestionCount() {
-        return 1;
+    public int getQuestionCount() throws IOException {
+        ArrayList<Question> questions = ExcelReader.loadQuestions(FILE_PATH);
+        return questions.size();
     }
 }

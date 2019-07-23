@@ -82,7 +82,12 @@ public class ExcelReader{
      */
     private static void populateQuestionWithAnswers(ArrayList<Question> questions, ArrayList<Answer> answers) {
         for(Answer answer : answers) {
-            questions.get(answer.getQuestionID()-1).addAnswer(answer);
+            for (Question question : questions) {
+                if (question.getId() == answer.getQuestionID()) {
+                    question.addAnswer(answer);
+                    break;
+                }
+            }
         }
     }
 
