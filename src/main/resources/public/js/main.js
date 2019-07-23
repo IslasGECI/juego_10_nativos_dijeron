@@ -9,13 +9,13 @@ $(window).on("load", function() {
     var newRoundAudio = new Audio("sound/new-round.mp3");
 
     async function main() {
-        numberOfQuestions = await getCount();
-        let firstQuestion = await getQuestion(actualQuestion);
-        drawQuestion(firstQuestion);
+        numberOfQuestions = await getQuestionCount();
+        let firstQuestion = await getQuestionByID(actualQuestion);
+        displayQuestion(firstQuestion);
         addListener2AnswerButtons();
         go2NextQuestion();
         assignScore2Team();
-        errorAnswerMessage();
+        showErrorAnswerMessage();
     }
 
     /**
@@ -23,7 +23,7 @@ $(window).on("load", function() {
      * las respuestas ocultas
      * @param {} question 
      */
-    function drawQuestion(question) {
+    function displayQuestion(question) {
         $("#center_board").html(`<h2>${question.id}. ${question.question}</h2>`);
         let orderedAnswers = orderAnswers(question);
         for(let answerIndex in orderedAnswers) {
@@ -38,7 +38,7 @@ $(window).on("load", function() {
      * Función que obtiene una pregunta
      * @param {*} questionID es el numero de pregunta
      */
-    function getQuestion(questionID) {
+    function getQuestionByID(questionID) {
         return new Promise(function(resolve, reject) {
             $.get(`/question/get?idQuestion=${questionID}`, (questionJSON) => {
                 resolve(questionJSON);
@@ -48,7 +48,7 @@ $(window).on("load", function() {
     /**
      * Función que obtiene el número total de preguntas
      */
-    function getCount() {
+    function getQuestionCount() {
         return new Promise(function(resolve, reject) {
             $.get(`/question/count`, (count) => {
                 resolve(count);
@@ -79,11 +79,10 @@ $(window).on("load", function() {
     async function go2NextQuestion(){
         $("#next_question").click(async function(){
             actualQuestion++;
-            let newQuestion = await getQuestion(actualQuestion);
-            roundScore = 0;
+            let newQuestion = await getQuestionByID(actualQuestion);
             removeHideClass("button");
             newRoundAudio.play();
-            drawQuestion(newQuestion);
+            displayQuestion(newQuestion);
             hideNextQuestionButton();
         });
     }
@@ -108,7 +107,6 @@ $(window).on("load", function() {
      */
     function updateScore(newScore, idScoreTeam){        
         $(`#${idScoreTeam}`).html(`<p>${newScore}</p>`);
-        roundScore = 0;
         addHideClass("button");
         removeHideClass("answer");
         $("#center_score").html(`<p>${roundScore}</p>`);
@@ -119,7 +117,7 @@ $(window).on("load", function() {
      * Función que agrega listener a botón de respuesta incorrecta
      * muestra imagen y reproduce sonido
      */
-    function errorAnswerMessage(){
+    function showErrorAnswerMessage(){
         $("#wrong_answer").click(function (){
             $("#error_image").show(1).delay(800).hide(1);
              wrongAudio.play();
