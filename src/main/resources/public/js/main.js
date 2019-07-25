@@ -3,7 +3,7 @@ $(window).on("load", function() {
     var actualQuestion = 0;
     var numberOfQuestions;
     var roundScore = 0;
-    var team1_score = 0, team2_score = 0;
+    var team1Score = 0, team2Score = 0;
     var wrongAudio = new Audio("sound/wrong-answer.mp3");
     var rightAudio = new Audio("sound/right-answer.mp3");
     var newRoundAudio = new Audio("sound/new-round.mp3");
@@ -93,14 +93,14 @@ $(window).on("load", function() {
      */
     function assignScore2Team(){
         $("#team_1").click(() => {
-            team1_score += roundScore;
+            team1Score += roundScore;
             roundScore = 0;
-            updateScore(team1_score, "left_score");
+            updateScore(team1Score, "left_score");
         });
         $("#team_2").click(() => {
-            team2_score += roundScore;
+            team2Score += roundScore;
             roundScore = 0;
-            updateScore(team2_score, "right_score");
+            updateScore(team2Score, "right_score");
         });
     }
     /**
