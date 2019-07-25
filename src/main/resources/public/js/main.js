@@ -4,9 +4,6 @@ $(window).on("load", function() {
     var numberOfQuestions;
     var roundScore = 0;
     var team1Score = 0, team2Score = 0;
-    var wrongAudio = new Audio("sound/wrong-answer.mp3");
-    var rightAudio = new Audio("sound/right-answer.mp3");
-    var newRoundAudio = new Audio("sound/new-round.mp3");
 
     async function main() {
         numberOfQuestions = await getQuestionCount();
@@ -64,7 +61,8 @@ $(window).on("load", function() {
     function addListener2AnswerButtons() {
         for (let i=1; i<6; i++){
             $(`#button${i}`).click(function (){
-                rightAudio.play();
+                var rightAudio = "sound/right-answer.mp3";
+                playSound(rightAudio)
                 $(`#answer-${i}`).delay(300).fadeIn(1000);
                 roundScore += parseInt($(`#answer-${i} span`).text());
                 $("#center_score").html(`<p>${roundScore}</p>`);
@@ -82,7 +80,8 @@ $(window).on("load", function() {
             actualQuestion++;
             let newQuestion = await getQuestionByID(actualQuestion);
             removeHideClass("button");
-            newRoundAudio.play();
+            var newRoundAudio = "sound/new-round.mp3";
+            playSound(newRoundAudio);
             displayQuestion(newQuestion);
             hideNextQuestionButton();
         });
@@ -123,7 +122,8 @@ $(window).on("load", function() {
     function showErrorAnswerMessage(){
         $("#wrong_answer").click(function (){
             $("#error_image").show(1).delay(800).hide(1);
-             wrongAudio.play();
+            var wrongAudio = ("sound/wrong-answer.mp3");
+            playSound(wrongAudio);
         });
     }
 
@@ -188,6 +188,16 @@ $(window).on("load", function() {
         $("#center_score").html(`<p>${roundScore}</p>`);
         $("#left_score").html(`<p>${roundScore}</p>`);
         $("#right_score").html(`<p>${roundScore}</p>`);
+    }
+
+    /**
+     * Función que reproduce los sonidos
+     * @param {*} audioPath es la ruta en la que se encuentra 
+     * el audio por reproducir
+     */
+    function playSound(audioPath){
+        var sound = new Audio (audioPath);
+        sound.play();
     }
 
     main();
