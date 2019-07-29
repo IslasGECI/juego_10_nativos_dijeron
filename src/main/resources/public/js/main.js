@@ -17,9 +17,8 @@ $(window).on("load", function() {
     }
 
     /**
-     * Función que muestra preguntas en el tablero manteniendo
-     * las respuestas ocultas
-     * @param {} question 
+     * Función que muestra preguntas en el tablero manteniendo las respuestas ocultas
+     * @param {question} es la pregunta a mostrar
      */
     function displayQuestion(question) {
         $("#center_board").html(`<h2>${question.id}. ${question.question}</h2>`);
@@ -55,8 +54,8 @@ $(window).on("load", function() {
     }
 
     /**
-     * Función que agrega audio al seleccionar un botón de respuesta
-     * y muestra el puntaje acumulado en el tablero central
+     * Función que agrega audio al seleccionar un botón de respuesta y muestra el 
+     * puntaje acumulado en el tablero central
      */
     function addListener2AnswerButtons() {
         for (let i=1; i<6; i++){
@@ -72,8 +71,7 @@ $(window).on("load", function() {
     }
 
     /**
-     * Función que va hacia la siguiente pregunta y agrega efecto de sonido 
-     * para nueva ronda
+     * Función que va hacia la siguiente pregunta y agrega efecto de sonido para nueva ronda
      */
     async function go2NextQuestion(){
         $("#next_question").click(async function(){
@@ -87,8 +85,7 @@ $(window).on("load", function() {
         });
     }
     /**
-     * Función que agrega listeners a los botones que asignan puntaje
-     * a los equipos
+     * Función que agrega listeners a los botones que asignan puntaje a los equipos
      */
     function assignScore2Team(){
         $("#team_1").click(() => {
@@ -104,8 +101,8 @@ $(window).on("load", function() {
     }
     /**
      * Función que actualiza puntaje del equipo en el tablero
-     * @param {*} newScore nuevo puntaje para asignar a un equipo
-     * @param {*} idScoreTeam id del div que despliega puntaje 
+     * @param {number} newScore nuevo puntaje para asignar a un equipo
+     * @param {string} idScoreTeam id del div que despliega puntaje 
      */
     function updateScore(newScore, idScoreTeam){        
         $(`#${idScoreTeam}`).html(`<p>${newScore}</p>`);
@@ -128,9 +125,9 @@ $(window).on("load", function() {
     }
 
     /**
-     * Función que agrega clase hide que se encuentra en el css
-     * @param {} element elemento al que se le quiere 
-     * agregar clase hide
+     * Función que ordena las respuestas de las preguntas de acuerdo a la cantidad de personas que 
+     * dijeron una respuesta
+     * @param {question} question es la pregunta a la que se le ordenarán las respuestas
      */
     function addHideClass(element){
         for (let i=1; i<6; i++){
@@ -156,8 +153,8 @@ $(window).on("load", function() {
         }
     }
     /**
-     * Función que oculta el botón de siguiente pregunta cuando
-     * el límite de preguntas por hacer, se ha alcanzado
+     * Función que oculta el botón de siguiente pregunta cuando el límite de preguntas por hacer,
+     * se ha alcanzado
      */
     function hideNextQuestionButton(){
         if(actualQuestion < numberOfQuestions -1 ){
