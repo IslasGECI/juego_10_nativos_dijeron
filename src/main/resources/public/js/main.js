@@ -17,7 +17,7 @@ $(window).on("load", function() {
     }
 
     /**
-     * Función que muestra preguntas en el tablero manteniendo las respuestas ocultas
+     * Muestra preguntas en el tablero manteniendo las respuestas ocultas
      * @param {question} es la pregunta a mostrar
      */
     function displayQuestion(question) {
@@ -34,7 +34,7 @@ $(window).on("load", function() {
     
 
     /**
-     * Función que agrega audio al seleccionar un botón de respuesta y muestra el 
+     * Agrega audio al seleccionar un botón de respuesta y muestra el 
      * puntaje acumulado en el tablero central
      */
     function addListener2AnswerButtons() {
@@ -51,7 +51,7 @@ $(window).on("load", function() {
     }
 
     /**
-     * Función que va hacia la siguiente pregunta y agrega efecto de sonido para nueva ronda
+     * Muestra la siguiente pregunta y agrega efecto de sonido para nueva ronda
      */
     async function go2NextQuestion(){
         $("#next_question").click(async function(){
@@ -65,7 +65,7 @@ $(window).on("load", function() {
         });
     }
     /**
-     * Función que agrega listeners a los botones que asignan puntaje a los equipos
+     * Agrega listeners a los botones que asignan puntaje a los equipos
      */
     function assignScore2Team(){
         $("#team_1").click(() => {
@@ -80,7 +80,7 @@ $(window).on("load", function() {
         });
     }
     /**
-     * Función que actualiza puntaje del equipo en el tablero
+     * Actualiza puntaje del equipo en el tablero
      * @param {number} newScore nuevo puntaje para asignar a un equipo
      * @param {string} idScoreTeam id del div que despliega puntaje 
      */
@@ -94,7 +94,7 @@ $(window).on("load", function() {
 
 
     /**
-     * Función que ordena las respuestas de las preguntas de acuerdo a la cantidad de personas que 
+     * Ordena las respuestas de las preguntas de acuerdo a la cantidad de personas que 
      * dijeron una respuesta
      * @param {question} question es la pregunta a la que se le ordenarán las respuestas
      */
@@ -111,7 +111,7 @@ $(window).on("load", function() {
     }
 
     /**
-     * Función que  muestra el botón de siguiente pregunta
+     * Muestra el botón de siguiente pregunta
      */
     function showNextQuestionButton(){
         if(actualQuestion < numberOfQuestions -1 ){
@@ -119,7 +119,7 @@ $(window).on("load", function() {
         }
     }
     /**
-     * Función que oculta el botón de siguiente pregunta cuando el límite de preguntas por hacer,
+     * Oculta el botón de siguiente pregunta cuando el límite de preguntas por hacer,
      * se ha alcanzado
      */
     function hideNextQuestionButton(){
