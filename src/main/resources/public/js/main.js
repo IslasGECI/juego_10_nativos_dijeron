@@ -26,9 +26,7 @@ $(window).on("load", function() {
         for(let answerIndex in orderedAnswers) {
             $("#center_board").append(`<div id="answer-${parseInt(answerIndex)+1}" class="hide" ><p>${question.answers[answerIndex].answer.trim()}</p><span>${question.answers[answerIndex].count}</span></div>`);
         }
-        for (let i=question.answers.length+1; i<6; i++){
-            $(`#button${i}`).addClass("hide");
-        }
+        showAnswerButtons(question);
         $("#next_question").addClass("hide");
     }
     
@@ -134,5 +132,14 @@ $(window).on("load", function() {
         $("#board .score_board").html(`<p>${roundScore}</p>`);
     }
 
+    /**
+     * Muestra los botones de respuesta dependiendo de la cantidad de respuestas por pregunta
+     * @param {question} question es la pregunta actual
+     */
+    function showAnswerButtons(question){
+        for (let i=question.answers.length+1; i<6; i++){
+            $(`#button-${i}`).addClass("hide");
+        }
+    }
     main();
 });
