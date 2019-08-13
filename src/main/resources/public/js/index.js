@@ -45,7 +45,7 @@
      */
     function addHideClass(element){
         for (let i=1; i<6; i++){
-            $(`#${element}${i}`).addClass("hide");
+            $(`#${element}-${i}`).addClass("hide");
         }
     }
     /**
@@ -54,7 +54,7 @@
      */
     function removeHideClass(element){
         for (let i=1; i<6; i++){
-            $(`#${element}${i}`).removeClass("hide");
+            $(`#${element}-${i}`).removeClass("hide");
         }
     }
 

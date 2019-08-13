@@ -39,7 +39,7 @@ $(window).on("load", function() {
      */
     function addListener2AnswerButtons() {
         for (let i=1; i<6; i++){
-            $(`#button${i}`).click(function (){
+            $(`#button-${i}`).click(function (){
                 var rightAudio = "sound/right-answer.mp3";
                 playSound(rightAudio)
                 $(`#answer-${i}`).delay(300).fadeIn(1000);
