@@ -51,7 +51,7 @@
      * Remueve clase hide que se encuentra en el css
      * @param {string} element elemento de html al que se le quiere remover la clase hide
      */
-    function removeHideClass(element){
+    function removeClassHide2Element(element){
         for (let i=1; i<6; i++){
             $(`#${element}-${i}`).removeClass("hide");
         }
