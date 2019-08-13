@@ -63,7 +63,6 @@
     function showErrorAnswerMessage(){
         $("#wrong_answer").click(function (){
             $("#error_image").show(1).delay(800).hide(1);
-            var wrongAudio = ("sound/wrong-answer.mp3");
-            playSound(wrongAudio);
+            playSound("sound/wrong-answer.mp3");
         });
     }

@@ -40,8 +40,7 @@ $(window).on("load", function() {
     function addListener2AnswerButtons() {
         for (let i=1; i<6; i++){
             $(`#button-${i}`).click(function (){
-                var rightAudio = "sound/right-answer.mp3";
-                playSound(rightAudio)
+                playSound("sound/right-answer.mp3");
                 $(`#answer-${i}`).delay(300).fadeIn(1000);
                 roundScore += parseInt($(`#answer-${i} span`).text());
                 $("#center_score").html(`<p>${roundScore}</p>`);
@@ -58,8 +57,7 @@ $(window).on("load", function() {
             actualQuestion++;
             let newQuestion = await getQuestionByID(actualQuestion);
             removeHideClass("button");
-            var newRoundAudio = "sound/new-round.mp3";
-            playSound(newRoundAudio);
+            playSound("sound/new-round.mp3");
             displayQuestion(newQuestion);
             hideNextQuestionButton();
         });
