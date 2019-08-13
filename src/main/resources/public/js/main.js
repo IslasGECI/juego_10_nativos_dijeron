@@ -62,6 +62,7 @@ $(window).on("load", function() {
             hideNextQuestionButton();
         });
     }
+    
     /**
      * Agrega listeners a los botones que asignan puntaje a los equipos
      */
@@ -77,6 +78,7 @@ $(window).on("load", function() {
             updateScore(team2Score, "right_score");
         });
     }
+
     /**
      * Actualiza puntaje del equipo en el tablero
      * @param {number} newScore nuevo puntaje para asignar a un equipo
@@ -87,7 +89,11 @@ $(window).on("load", function() {
         addClassHide2Element("button");
         removeClassHide2Element("answer");
         $("#center_score").html(`<p>${roundScore}</p>`);
-        showNextQuestionButton();
+        if(actualQuestion < numberOfQuestions -1 ){
+            showNextQuestionButton();
+        }else{
+            hideNextQuestionButton();
+        }
     }
 
 
@@ -112,7 +118,6 @@ $(window).on("load", function() {
      * Muestra el botón de siguiente pregunta
      */
     function showNextQuestionButton(){
-        if(actualQuestion < numberOfQuestions -1 ){
             $("#next_question").removeClass("hide");
         }
     }
@@ -121,7 +126,6 @@ $(window).on("load", function() {
      * se ha alcanzado
      */
     function hideNextQuestionButton(){
-        if(actualQuestion < numberOfQuestions -1 ){
             $("#next_question").addClass("hide");
         }
     }
