@@ -1,4 +1,3 @@
-    var roundScore = 0;
 
     /**
      * Obtiene una pregunta
@@ -24,13 +23,6 @@
 
     /**
      * Reproduce los sonidos
-     */
-    function setInitialScore2Boards(){
-        $("#center_score").html(`<p>${roundScore}</p>`);
-        $("#left_score").html(`<p>${roundScore}</p>`);
-        $("#right_score").html(`<p>${roundScore}</p>`);
-    }
-    /**
      * @param {string} audioPath es la ruta en la que se encuentra el audio por reproducir
      */
     function playSound(audioPath){

@@ -96,7 +96,6 @@ $(window).on("load", function() {
         }
     }
 
-
     /**
      * Ordena las respuestas de las preguntas de acuerdo a la cantidad de personas que 
      * dijeron una respuesta
@@ -118,17 +117,22 @@ $(window).on("load", function() {
      * Muestra el botón de siguiente pregunta
      */
     function showNextQuestionButton(){
-            $("#next_question").removeClass("hide");
-        }
+        $("#next_question").removeClass("hide");
     }
     /**
      * Oculta el botón de siguiente pregunta cuando el límite de preguntas por hacer,
      * se ha alcanzado
      */
     function hideNextQuestionButton(){
-            $("#next_question").addClass("hide");
-        }
+        $("#next_question").addClass("hide");
     }
     
+    /**
+     * Inicializa los puntajes de los tableros
+     */
+    function setInitialScore2Boards(){
+        $("#board .score_board").html(`<p>${roundScore}</p>`);
+    }
+
     main();
 });
