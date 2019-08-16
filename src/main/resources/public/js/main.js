@@ -65,16 +65,14 @@ $(window).on("load", function() {
      * Agrega listeners a los botones que asignan puntaje a los equipos
      */
     function assignScore2Team(){
-        $("#team_1").click(() => {
-            team1Score += roundScore;
-            roundScore = 0;
-            updateScore(team1Score, "left_score");
-        });
-        $("#team_2").click(() => {
-            team2Score += roundScore;
-            roundScore = 0;
-            updateScore(team2Score, "right_score");
-        });
+        for(let i = 1; i<=2; i++){
+            $(`#team_${i}`).click(() => {
+                isTeamOne = i === 1;
+                let scoreTeam = isTeamOne ? team1Score += roundScore: team2Score += roundScore;
+                roundScore = 0;
+                updateScore(scoreTeam, `${isTeamOne ? "left" : "right"}_score`);
+            });
+        }
     }
 
     /**
