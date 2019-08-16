@@ -110,20 +110,6 @@ $(window).on("load", function() {
                 return 0;
         });
     }
-
-    /**
-     * Muestra el botón de siguiente pregunta
-     */
-    function showNextQuestionButton(){
-        $("#next_question").removeClass("hide");
-    }
-    /**
-     * Oculta el botón de siguiente pregunta cuando el límite de preguntas por hacer,
-     * se ha alcanzado
-     */
-    function hideNextQuestionButton(){
-        $("#next_question").addClass("hide");
-    }
     
     /**
      * Inicializa los puntajes de los tableros
@@ -132,14 +118,5 @@ $(window).on("load", function() {
         $("#board .score_board").html(`<p>${roundScore}</p>`);
     }
 
-    /**
-     * Muestra los botones de respuesta dependiendo de la cantidad de respuestas por pregunta
-     * @param {question} question es la pregunta actual
-     */
-    function showAnswerButtons(question){
-        for (let i=question.answers.length+1; i<6; i++){
-            $(`#button-${i}`).addClass("hide");
-        }
-    }
     main();
 });
