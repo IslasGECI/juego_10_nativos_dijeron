@@ -16,7 +16,7 @@ import java.util.ArrayList;
 @RestController
 public class QuestionController {
 
-    public static final String FILE_PATH = "src/Juego.xlsx";
+    public static final String FILE_PATH = "src/survey.xlsx";
 
     /**
      * Método que regresar una pregunta cuando se haga la petición
