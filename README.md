@@ -36,7 +36,6 @@ Una vez descargado IntelliJ IDEA:
 * Clona [este](https://github.com/IslasGECI/juego_10_nativos_dijeron.git) repositorio.
 * Abre IntelliJ.
 * Abre el nuevo proyecto que se clonó.
-* Cuando el proyecto se haya abierto, agregue en la carpeta src el archivo "Juego.xlsx".
 * Da click en el botón que tiene un recuadro rojo.
 
 ![image](https://user-images.githubusercontent.com/24512323/63110952-6cc2dc80-bf41-11e9-9d34-a472debf8c0b.png)
