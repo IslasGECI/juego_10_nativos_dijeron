@@ -52,7 +52,7 @@ public class ExcelReader{
         Iterator<Row> rowIterator = answerSheet.rowIterator();
         rowIterator.next();
         while(rowIterator.hasNext()){
-            answer_list.add(answerFromRow(rowIterator.next()));
+            answer_list.add(getAnswerFromRow(rowIterator.next()));
         }
         return answer_list;
     }
@@ -62,7 +62,7 @@ public class ExcelReader{
      * @param row Renglón de datos
      * @return Respuesta construida a partir de los datos del renglón
      */
-    private static Answer answerFromRow(Row row) {
+    private static Answer getAnswerFromRow(Row row) {
         DataFormatter dataFormatter = new DataFormatter();
         Cell idCell = row.getCell(0);
         String idValue = dataFormatter.formatCellValue(idCell);
