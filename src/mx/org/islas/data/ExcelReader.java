@@ -21,7 +21,7 @@ public class ExcelReader{
         Iterator<Row> rowIterator = questionsSheet.rowIterator();
         rowIterator.next();
         while(rowIterator.hasNext()){
-            question_list.add(questionFromRow(rowIterator.next()));
+            question_list.add(getQuestionFromRow(rowIterator.next()));
         }
         return question_list;
     }
@@ -31,7 +31,7 @@ public class ExcelReader{
      * @param row Renglón de datos
      * @return Pregunta construida a partir de los datos del renglón
      */
-    private static Question questionFromRow(Row row) {
+    private static Question getQuestionFromRow(Row row) {
         DataFormatter dataFormatter = new DataFormatter();
         Cell indexCell = row.getCell(0);
         String cellValue = dataFormatter.formatCellValue(indexCell);
