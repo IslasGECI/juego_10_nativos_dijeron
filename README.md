@@ -36,12 +36,13 @@ Una vez descargado IntelliJ IDEA:
 * Clona [este](https://github.com/IslasGECI/juego_10_nativos_dijeron.git) repositorio.
 * Abre IntelliJ.
 * Abre el nuevo proyecto que se clonó.
-* Da click en el botón que tiene un recuadro rojo.
+* Una vez que el proyecto esté abierto:
+* Da click derecho a la carpeta `src > Mark Directory as > Sources Root` para que se reconozca como la carpeta raíz.
+![image](https://user-images.githubusercontent.com/24512323/63958366-11afe000-ca3f-11e9-99aa-091d7204f1b2.png)
+* Da click en el botón que tiene un recuadro rojo o a la opción **Reimport All Maven Projects**..
+![image](https://user-images.githubusercontent.com/24512323/63960048-6bfe7000-ca42-11e9-8887-4372bb7ab5e4.png)
 
-![image](https://user-images.githubusercontent.com/24512323/63110952-6cc2dc80-bf41-11e9-9d34-a472debf8c0b.png)
-
-* Da click en correr proyecto o en el botón con recuadro rojo que se puede encontrar en el archivo Main.java
-
-![image](https://user-images.githubusercontent.com/24512323/63110852-37b68a00-bf41-11e9-995f-0901cfddf342.png)
+* Da click en correr proyecto o en el botón con recuadro rojo que se puede encontrar en el archivo Main.java que se encuentra en `src/mx/org/islas/Main.java`
+![image](https://user-images.githubusercontent.com/24512323/63960190-c0a1eb00-ca42-11e9-8090-54afcc5ce6ff.png)
 
 * En el navegador escribe http://localhost:8080
