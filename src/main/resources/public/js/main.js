@@ -12,7 +12,7 @@ $(window).on("load", function() {
         addListener2AnswerButtons();
         go2NextQuestion();
         assignScore2Team();
-        showErrorAnswerMessage();
+        showWrongAnswerMessage();
         setInitialScore2Boards();
     }
 

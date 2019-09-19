@@ -52,7 +52,7 @@
     /**
      * Agrega listener a botón de respuesta incorrecta muestra imagen y reproduce sonido
      */
-    function showErrorAnswerMessage(){
+    function showWrongAnswerMessage(){
         $("#wrong_answer").click(function (){
             $("#error_image").show(1).delay(800).hide(1);
             playSound("sound/wrong-answer.mp3");
