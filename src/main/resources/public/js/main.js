@@ -1,3 +1,4 @@
+const maximumOfAnswersToShow = 5;
 $(window).on("load", function() {
 
     var actualQuestion = 0;
@@ -24,7 +25,7 @@ $(window).on("load", function() {
         $("#center_board").html(`<h2>${question.id}. ${question.question}</h2>`);
         let orderedAnswers = orderAnswers(question);
         for(let answerIndex in orderedAnswers) {
-            $("#center_board").append(`<div id="answer-${parseInt(answerIndex)+1}" class="hide" ><p>${question.answers[answerIndex].answer.trim()}</p><span>${question.answers[answerIndex].count}</span></div>`);
+            $("#center_board").append(`<div id="answer-${parseInt(answerIndex)}" class="hide" ><p>${question.answers[answerIndex].answer.trim()}</p><span>${question.answers[answerIndex].count}</span></div>`);
         }
         showAnswerButtons(question);
         $("#next_question").addClass("hide");
@@ -36,7 +37,7 @@ $(window).on("load", function() {
      * puntaje acumulado en el tablero central
      */
     function addListener2AnswerButtons() {
-        for (let i=1; i<6; i++){
+        for (let i = 0; i < maximumOfAnswersToShow; i++){
             $(`#button-${i}`).click(function (){
                 playSound("sound/right-answer.mp3");
                 $(`#answer-${i}`).delay(300).fadeIn(1000);
