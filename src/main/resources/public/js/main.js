@@ -54,7 +54,7 @@ $(window).on("load", function() {
         $("#next_question").click(async function(){
             actualQuestion++;
             let newQuestion = await getQuestionByID(actualQuestion);
-            removeClassHide2Element("button");
+            removeClassHideFromElement("button");
             playSound("sound/new-round.mp3");
             displayQuestion(newQuestion);
             hideNextQuestionButton();
@@ -83,7 +83,7 @@ $(window).on("load", function() {
     function updateScore(newScore, idScoreTeam){        
         $(`#${idScoreTeam}`).html(`<p>${newScore}</p>`);
         addClassHideToElement("button");
-        removeClassHide2Element("answer");
+        removeClassHideFromElement("answer");
         $("#center_score").html(`<p>${roundScore}</p>`);
         if(actualQuestion < numberOfQuestions -1 ){
             showNextQuestionButton();
