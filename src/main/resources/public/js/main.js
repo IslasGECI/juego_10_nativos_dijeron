@@ -82,7 +82,7 @@ $(window).on("load", function() {
      */
     function updateScore(newScore, idScoreTeam){        
         $(`#${idScoreTeam}`).html(`<p>${newScore}</p>`);
-        addClassHide2Element("button");
+        addClassHideToElement("button");
         removeClassHide2Element("answer");
         $("#center_score").html(`<p>${roundScore}</p>`);
         if(actualQuestion < numberOfQuestions -1 ){

@@ -34,7 +34,7 @@
      * Agrega clase hide que se encuentra en el css
      * @param {string} element elemento al que se le quiere agregar clase hide
      */
-    function addClassHide2Element(element){
+    function addClassHideToElement(element){
         for (let i=1; i<6; i++){
             $(`#${element}-${i}`).addClass("hide");
         }
