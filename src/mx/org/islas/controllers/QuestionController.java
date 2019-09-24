@@ -22,7 +22,7 @@ public class QuestionController {
      * Método que regresar una pregunta cuando se haga la petición
      * @return JSON que representa una pregunta
      */
-    @RequestMapping("/question/get")
+    @RequestMapping("/questions/{idQuestion}")
     public Question getQuestion(@RequestParam(value="idQuestion", defaultValue = "0") int idQuestion) throws IOException {
         ArrayList<Question> questions = ExcelReader.loadQuestions(FILE_PATH);
         return questions.get(idQuestion);

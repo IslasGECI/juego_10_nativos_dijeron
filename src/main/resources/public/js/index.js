@@ -5,7 +5,7 @@
      */
     function getQuestionByID(questionID) {
         return new Promise(function(resolve, reject) {
-            $.get(`/question/get?idQuestion=${questionID}`, (questionJSON) => {
+            $.get(`/questions/${questionID}`, (questionJSON) => {
                 resolve(questionJSON);
             });
         });
