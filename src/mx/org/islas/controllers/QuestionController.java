@@ -1,5 +1,6 @@
 package mx.org.islas.controllers;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,7 +24,7 @@ public class QuestionController {
      * @return JSON que representa una pregunta
      */
     @RequestMapping("/questions/{idQuestion}")
-    public Question getQuestion(@RequestParam(value="idQuestion", defaultValue = "0") int idQuestion) throws IOException {
+    public Question getQuestion(@PathVariable("idQuestion") int idQuestion) throws IOException {
         ArrayList<Question> questions = ExcelReader.loadQuestions(FILE_PATH);
         return questions.get(idQuestion);
     }
