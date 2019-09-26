@@ -35,7 +35,7 @@
      * @param {string} element elemento al que se le quiere agregar clase hide
      */
     function addClassHideToElement(element){
-        for (let i=0; i < maximumOfAnswersToShow; i++){
+        for (let i=0; i <  MAXIMUM_OF_ANSWERS_TO_SHOW; i++){
             $(`#${element}-${i}`).addClass("hide");
         }
     }
@@ -44,7 +44,7 @@
      * @param {string} element elemento de html al que se le quiere remover la clase hide
      */
     function removeClassHideFromElement(element){
-        for (let i=0; i < maximumOfAnswersToShow; i++){
+        for (let i=0; i <  MAXIMUM_OF_ANSWERS_TO_SHOW; i++){
             $(`#${element}-${i}`).removeClass("hide");
         }
     }
@@ -64,7 +64,7 @@
      * @param {question} question es la pregunta actual
      */
     function showAnswerButtons(question){
-        for (let i=question.answers.length; i < maximumOfAnswersToShow; i++){
+        for (let i=question.answers.length; i <  MAXIMUM_OF_ANSWERS_TO_SHOW; i++){
             $(`#button-${i}`).addClass("hide");
         }
     }

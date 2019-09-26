@@ -1,4 +1,4 @@
-const maximumOfAnswersToShow = 5;
+const MAXIMUM_OF_ANSWERS_TO_SHOW = 5;
 $(window).on("load", function() {
 
     var actualQuestion = 0;
@@ -37,7 +37,7 @@ $(window).on("load", function() {
      * puntaje acumulado en el tablero central
      */
     function addListener2AnswerButtons() {
-        for (let i = 0; i < maximumOfAnswersToShow; i++){
+        for (let i = 0; i <  MAXIMUM_OF_ANSWERS_TO_SHOW; i++){
             $(`#button-${i}`).click(function (){
                 playSound("sound/right-answer.mp3");
                 $(`#answer-${i}`).delay(300).fadeIn(1000);
