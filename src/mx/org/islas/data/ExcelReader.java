@@ -103,7 +103,15 @@ public class ExcelReader{
         ArrayList<Question> questions = readQuestions(workbook);
         ArrayList<Answer> answers = readAnswers(workbook);
         populateQuestionWithAnswers(questions, answers);
+        populateRound(questions);
         workbook.close();
         return questions;
+    }
+
+    public static ArrayList<Round> populateRound(ArrayList<Question> questions){
+        ArrayList<Round> rounds = new ArrayList<Round>();
+        Round round = new Round(questions.size(), questions);
+        rounds.add(round);
+        return rounds;
     }
 }
