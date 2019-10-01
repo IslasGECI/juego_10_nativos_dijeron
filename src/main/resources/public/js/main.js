@@ -5,10 +5,12 @@ $(window).on("load", function() {
     var numberOfQuestions;
     var roundScore = 0;
     var team1Score = 0, team2Score = 0;
+    var round;
 
     async function main() {
-        numberOfQuestions = await getQuestionCount();
-        let firstQuestion = await getQuestionByID(actualQuestion);
+        round = await getRoundInformation();
+        numberOfQuestions = round.questionsNumber;
+        let firstQuestion = round.questions[actualQuestion];
         displayQuestion(firstQuestion);
         addListener2AnswerButtons();
         go2NextQuestion();
@@ -30,7 +32,6 @@ $(window).on("load", function() {
         showAnswerButtons(question);
         $("#next_question").addClass("hide");
     }
-    
 
     /**
      * Agrega audio al seleccionar un botón de respuesta y muestra el 

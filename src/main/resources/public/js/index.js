@@ -10,17 +10,14 @@
             });
         });
     }
-    /**
-     * Obtiene el número total de preguntas
-     */
-    function getQuestionCount() {
+
+    function getRoundInformation() {
         return new Promise(function(resolve, reject) {
-            $.get(`/question/count`, (count) => {
-                resolve(count);
+            $.get(`round/questions/`, (questionJSON) => {
+                resolve(questionJSON);
             });
         });
     }
-
     /**
      * Reproduce los sonidos
      * @param {string} audioPath es la ruta en la que se encuentra el audio por reproducir
