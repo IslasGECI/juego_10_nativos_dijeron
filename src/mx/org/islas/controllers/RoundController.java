@@ -19,9 +19,9 @@ public class RoundController {
     public static final String FILE_PATH = "src/survey.xlsx";
 
     /**
-     * Método que regresa la información de una ronda
+     * Método que regresará todas las rondas
      */
-    @RequestMapping("rounds/questions/")
+    @RequestMapping("rounds/")
     public ArrayList<Round> getRounds() throws IOException {
         ArrayList<Question> questions = ExcelReader.loadQuestions(FILE_PATH);
         ArrayList<Round> rounds = ExcelReader.populateRound(questions);

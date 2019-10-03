@@ -1,6 +1,5 @@
 package mx.org.islas.models;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -48,11 +47,4 @@ public class Round {
         return this.questions;
     }
 
-    /**
-     * Función que obtiene la ronda
-     * @return un mensaje con la cantidad total de preguntas y las preguntas
-     */
-    public String getRound(){
-        return getQuestionsNumber() + " " + getQuestions();
-    }
 }

@@ -20,7 +20,7 @@ public class QuestionController {
     public static final String FILE_PATH = "src/survey.xlsx";
 
     /**
-     * Método que regresar una pregunta cuando se haga la petición
+     * Método que regresará una pregunta cuando se haga la petición
      * @return JSON que representa una pregunta
      */
     @RequestMapping("/questions/{idQuestion}")
