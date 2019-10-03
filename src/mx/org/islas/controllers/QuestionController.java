@@ -28,14 +28,4 @@ public class QuestionController {
         ArrayList<Question> questions = ExcelReader.loadQuestions(FILE_PATH);
         return questions.get(idQuestion);
     }
-
-    /**
-     * Método que regresa la cantidad de preguntas disponibles
-     * @return Cantidad de preguntas disponibles
-     */
-    @RequestMapping("/question/count")
-    public int getQuestionCount() throws IOException {
-        ArrayList<Question> questions = ExcelReader.loadQuestions(FILE_PATH);
-        return questions.size();
-    }
 }
