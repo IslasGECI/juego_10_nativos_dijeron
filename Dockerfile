@@ -1,3 +1,3 @@
-FROM openjdk:14
+FROM openjdk:11
 COPY . /usr
 WORKDIR /usr
