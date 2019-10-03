@@ -11,9 +11,12 @@
         });
     }
 
+    /**
+     * Obtiene todas las preguntas
+     */
     function getRoundInformation() {
         return new Promise(function(resolve, reject) {
-            $.get(`round/questions/`, (questionJSON) => {
+            $.get(`questions/`, (questionJSON) => {
                 resolve(questionJSON);
             });
         });

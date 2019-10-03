@@ -27,7 +27,11 @@ public class RoundController {
         ArrayList<Round> rounds = ExcelReader.populateRound(questions);
         return rounds;
     }
-    @RequestMapping("round/questions/")
+
+    /**
+     * Método que regresará la información de una ronda
+     */
+    @RequestMapping("questions/") //round/questions
     public Round getQuestions() throws IOException {
         ArrayList<Question> questions = ExcelReader.loadQuestions(FILE_PATH);
         Round round = new Round (questions.size(), questions);
