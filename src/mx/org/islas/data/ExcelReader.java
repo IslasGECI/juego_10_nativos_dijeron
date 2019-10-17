@@ -16,14 +16,14 @@ public class ExcelReader{
      * @return Lista de preguntas cargadas desde el archivo
      */
     private static ArrayList<Question> readQuestions(Workbook workbook) {
-        ArrayList<Question> question_list = new ArrayList<Question>();
+        ArrayList<Question> questionList = new ArrayList<Question>();
         Sheet questionsSheet = workbook.getSheetAt(0);
         Iterator<Row> rowIterator = questionsSheet.rowIterator();
         rowIterator.next();
         while(rowIterator.hasNext()){
-            question_list.add(getQuestionFromRow(rowIterator.next()));
+            questionList.add(getQuestionFromRow(rowIterator.next()));
         }
-        return question_list;
+        return questionList;
     }
 
     /**
@@ -47,14 +47,14 @@ public class ExcelReader{
      * @return Lisra de respuestas cargadas desde el archivo
      */
     private static ArrayList<Answer> readAnswers(Workbook workbook) {
-        ArrayList<Answer> answer_list = new ArrayList<Answer>();
+        ArrayList<Answer> answerList = new ArrayList<Answer>();
         Sheet answerSheet = workbook.getSheetAt(1);
         Iterator<Row> rowIterator = answerSheet.rowIterator();
         rowIterator.next();
         while(rowIterator.hasNext()){
-            answer_list.add(getAnswerFromRow(rowIterator.next()));
+            answerList.add(getAnswerFromRow(rowIterator.next()));
         }
-        return answer_list;
+        return answerList;
     }
 
     /**
@@ -109,9 +109,9 @@ public class ExcelReader{
     }
 
     public static ArrayList<Round> populateRound(ArrayList<Question> questions){
-        ArrayList<Round> rounds = new ArrayList<Round>();
+        ArrayList<Round> roundList = new ArrayList<Round>();
         Round round = new Round(questions.size(), questions);
-        rounds.add(round);
-        return rounds;
+        roundList.add(round);
+        return roundList;
     }
 }
