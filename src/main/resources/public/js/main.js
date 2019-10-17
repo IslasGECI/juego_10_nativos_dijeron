@@ -1,7 +1,7 @@
 const MAXIMUM_OF_ANSWERS_TO_SHOW = 5;
 $(window).on("load", function() {
 
-    var actualQuestion = 0;
+    var currentQuestion = 0;
     var numberOfQuestions;
     var roundScore = 0;
     var team1Score = 0, team2Score = 0;
@@ -10,7 +10,7 @@ $(window).on("load", function() {
     async function main() {
         round = await getRoundInformation();
         numberOfQuestions = round.questionsNumber;
-        let firstQuestion = round.questions[actualQuestion];
+        let firstQuestion = round.questions[currentQuestion];
         displayQuestion(firstQuestion);
         addListener2AnswerButtons();
         go2NextQuestion();
@@ -54,8 +54,8 @@ $(window).on("load", function() {
      */
     async function go2NextQuestion(){
         $("#next_question").click(async function(){
-            actualQuestion++;
-            let newQuestion = await getQuestionByID(actualQuestion);
+            currentQuestion++;
+            let newQuestion = await getQuestionByID(currentQuestion);
             removeClassHideFromElement("button");
             playSound("sound/new-round.mp3");
             displayQuestion(newQuestion);
@@ -87,7 +87,7 @@ $(window).on("load", function() {
         addClassHideToElement("button");
         removeClassHideFromElement("answer");
         $("#center_score").html(`<p>${roundScore}</p>`);
-        if(actualQuestion < numberOfQuestions -1 ){
+        if(currentQuestion < numberOfQuestions -1 ){
             showNextQuestionButton();
         }else{
             hideNextQuestionButton();
