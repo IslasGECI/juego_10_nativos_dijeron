@@ -12,11 +12,11 @@ $(window).on("load", function() {
         numberOfQuestions = round.questionsNumber;
         let firstQuestion = round.questions[currentQuestion];
         displayQuestion(firstQuestion);
-        addListener2AnswerButtons();
-        go2NextQuestion();
-        assignScore2Team();
+        addListenerToAnswerButtons();
+        goToNextQuestion();
+        assignScoreToTeam();
         showWrongAnswerMessage();
-        setInitialScore2Boards();
+        setInitialScoreOnBoards();
     }
 
     /**
@@ -37,7 +37,7 @@ $(window).on("load", function() {
      * Agrega audio al seleccionar un botón de respuesta y muestra el 
      * puntaje acumulado en el tablero central
      */
-    function addListener2AnswerButtons() {
+    function addListenerToAnswerButtons() {
         for (let i = 0; i <  MAXIMUM_OF_ANSWERS_TO_SHOW; i++){
             $(`#button-${i}`).click(function (){
                 playSound("sound/right-answer.mp3");
@@ -52,7 +52,7 @@ $(window).on("load", function() {
     /**
      * Muestra la siguiente pregunta y agrega efecto de sonido para nueva ronda
      */
-    async function go2NextQuestion(){
+    async function goToNextQuestion(){
         $("#next_question").click(async function(){
             currentQuestion++;
             let newQuestion = await getQuestionByID(currentQuestion);
@@ -66,7 +66,7 @@ $(window).on("load", function() {
     /**
      * Agrega listeners a los botones que asignan puntaje a los equipos
      */
-    function assignScore2Team(){
+    function assignScoreToTeam(){
         for(let i = 1; i<=2; i++){
             $(`#team_${i}`).click(() => {
                 isTeamOne = i === 1;
@@ -114,7 +114,7 @@ $(window).on("load", function() {
     /**
      * Inicializa los puntajes de los tableros
      */
-    function setInitialScore2Boards(){
+    function setInitialScoreOnBoards(){
         $("#board .score_board").html(`<p>${roundScore}</p>`);
     }
 
