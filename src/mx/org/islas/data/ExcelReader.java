@@ -16,14 +16,14 @@ public class ExcelReader{
      * @return Lista de preguntas cargadas desde el archivo
      */
     private static ArrayList<Question> readQuestions(Workbook workbook) {
-        ArrayList<Question> question_list = new ArrayList<Question>();
+        ArrayList<Question> questionList = new ArrayList<Question>();
         Sheet questionsSheet = workbook.getSheetAt(0);
         Iterator<Row> rowIterator = questionsSheet.rowIterator();
         rowIterator.next();
         while(rowIterator.hasNext()){
-            question_list.add(questionFromRow(rowIterator.next()));
+            questionList.add(getQuestionFromRow(rowIterator.next()));
         }
-        return question_list;
+        return questionList;
     }
 
     /**
@@ -31,7 +31,7 @@ public class ExcelReader{
      * @param row Renglón de datos
      * @return Pregunta construida a partir de los datos del renglón
      */
-    private static Question questionFromRow(Row row) {
+    private static Question getQuestionFromRow(Row row) {
         DataFormatter dataFormatter = new DataFormatter();
         Cell indexCell = row.getCell(0);
         String cellValue = dataFormatter.formatCellValue(indexCell);
@@ -47,14 +47,14 @@ public class ExcelReader{
      * @return Lisra de respuestas cargadas desde el archivo
      */
     private static ArrayList<Answer> readAnswers(Workbook workbook) {
-        ArrayList<Answer> answer_list = new ArrayList<Answer>();
+        ArrayList<Answer> answerList = new ArrayList<Answer>();
         Sheet answerSheet = workbook.getSheetAt(1);
         Iterator<Row> rowIterator = answerSheet.rowIterator();
         rowIterator.next();
         while(rowIterator.hasNext()){
-            answer_list.add(answerFromRow(rowIterator.next()));
+            answerList.add(getAnswerFromRow(rowIterator.next()));
         }
-        return answer_list;
+        return answerList;
     }
 
     /**
@@ -62,7 +62,7 @@ public class ExcelReader{
      * @param row Renglón de datos
      * @return Respuesta construida a partir de los datos del renglón
      */
-    private static Answer answerFromRow(Row row) {
+    private static Answer getAnswerFromRow(Row row) {
         DataFormatter dataFormatter = new DataFormatter();
         Cell idCell = row.getCell(0);
         String idValue = dataFormatter.formatCellValue(idCell);
@@ -82,7 +82,12 @@ public class ExcelReader{
      */
     private static void populateQuestionWithAnswers(ArrayList<Question> questions, ArrayList<Answer> answers) {
         for(Answer answer : answers) {
-            questions.get(answer.getQuestionID()-1).addAnswer(answer);
+            for (Question question : questions) {
+                if (question.getId() == answer.getQuestionID()) {
+                    question.addAnswer(answer);
+                    break;
+                }
+            }
         }
     }
 
@@ -98,7 +103,15 @@ public class ExcelReader{
         ArrayList<Question> questions = readQuestions(workbook);
         ArrayList<Answer> answers = readAnswers(workbook);
         populateQuestionWithAnswers(questions, answers);
+        populateRound(questions);
         workbook.close();
         return questions;
+    }
+
+    public static ArrayList<Round> populateRound(ArrayList<Question> questions){
+        ArrayList<Round> roundList = new ArrayList<Round>();
+        Round round = new Round(questions.size(), questions);
+        roundList.add(round);
+        return roundList;
     }
 }

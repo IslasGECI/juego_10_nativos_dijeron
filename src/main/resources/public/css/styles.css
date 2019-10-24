@@ -83,16 +83,68 @@ h2{
 }
 .controls button{
     position: relative;
-    width: 32px;
-    height: 32px;
+    width: 50px;
+    height: 50px;
     line-height: 32px;
-    border-radius: 50%;
+    border-radius: 15%;
     border: solid 1px #073975;
     overflow: hidden;
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     background: #073975;
     cursor: pointer;
     transition: .4s;
     margin: 0 5px;
+}
+#controls_answer, #controls_round{
+    width: 12%;
+    height: 12%;
+}
+.hide {
+    display: none;
+}
+#error_image{
+    left: 30%;
+    position: absolute;
+    right: 30%;
+    top: 15%;
+    width: 40%;
+}
+#error_image img {
+    width: 100%;
+    height: 20%;
+}
+#team_1, #team_2{
+    position: absolute;
+    top: 300px;
+    border-radius: 10%;
+    width: 6%;
+    height: 10%;
+    font-size: 20px;
+    color: white;
+}
+#team_1{
+    background: #58b758;
+    border: 1px solid #58b758;
+    left: 30px;
+}
+#team_2{
+    background: #2d70c5;
+    border: 1px solid #2d70c5;
+    right: 30px;
+}
+#title {
+    background-color: white;
+    color: black;
+}
+#logos {
+    background-color: white;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    padding: 15px;
+    border-top-left-radius: 5px;
+}
+#logos img{
+    height: 50px;
 }

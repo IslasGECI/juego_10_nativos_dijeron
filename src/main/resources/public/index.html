@@ -5,40 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <title>10 Nativos dijeron</title>
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
 </head>
 <body>
+    <div id="logos">
+        <img src="img/logo_geci.svg">
+    </div>
     <div class="container">
         <div id="oval">     
             <div id="board">
-                <div id="center_score" class="score_board"><p>200</p></div>
-                <div id="left_score" class="score_board"><p>150</p></div>
-                <div id="center_board">
-                    <h2>¿Cuál es la especie animal más numerosa de la isla?</h2>
-                    <p>Respuesta 1 </p><span>1</span> <br>
-                    <p>Respuesta 2 </p><span>2</span> <br>
-                    <p>Respuesta 3 </p><span>3</span> <br>
-                    <p>Respuesta 4 </p><span>4</span> <br>
-                    <p>Respuesta 5 </p><span>5</span> <br>
-                </div>
-                <div id="right_score" class="score_board"><p>150</p></div>
+                <div id="center_score" class="score_board"></div>
+                <div id="left_score" class="score_board"></div>
+                <div id="center_board"></div>
+                <div id="right_score" class="score_board"></div>
             </div>           
         </div>  
         <div class="controls">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>5</button>
-            <div class="controls_answer">
-                <button><img src="img/wrong.png" alt="" width="30px" height="30px"></button>
+            <button id="button-0">1</button>
+            <button id="button-1">2</button>
+            <button id="button-2">3</button>
+            <button id="button-3">4</button>
+            <button id="button-4">5</button>
+            <div id="controls_answer">
+                <button id="wrong_answer"><img src="img/wrong.png" alt="" width="30px" height="30px"></button>
             </div>
-            <div class="controls_round">
-                    <button><img src="img/left-arrow.png" alt="" width="30px" height="30px"></button>
-                    <button><img src="img/right-arrow.png" alt="" width="30px" height="30px"></button>
-                </div>
-            
+            <div id="controls_round">
+                    <button id="next_question"><img src="img/right-arrow.png" alt="" width="30px" height="30px"></button>
+            </div>
+        </div>
+        <div class="controls_team">
+            <button id="team_1">Equipo 1</button>
+            <button id="team_2">Equipo 2</button>
+        </div>
+        <div id="error_image" class="hide">
+            <img src="img/strike.png" width="150px" height="150px">
         </div>
     </div>     
+    <script src="js/index.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
