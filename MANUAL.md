@@ -11,7 +11,7 @@ _Estas instrucciones te permitirán ejecutar la aplicacion._
 
 ### Pre-requisitos 📋
 
-_Que cosas necesitas tener antes de poder ejecutar la aplicacions:_
+_Qué cosas necesitas tener antes de poder ejecutar la aplicación:_
 - Tener un sistema operativos (windows, ubuntu, macOs)
 - [Tener java Jre8 Instalado](https://www.oracle.com/mx/java/technologies/javase-jre8-downloads.html)
 
