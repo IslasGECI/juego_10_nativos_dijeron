@@ -24,11 +24,11 @@ El cual contendra tres cosas (carpeta que contiene el excel, el ejecutable, las 
 - src/surveys.xlsx
 - 10-nativos-dijeron.jar
 - instalaciones de java con 2 instalaciones para x64 y x86
+- ejecutar en windwos.bat
 
 ### Ejecución 🕹
-Para ejecutar la aplicacion se debe abrir una linea de comandos en la ubicacion del ejecutable
-y ejecutar el siguiente comando:
-java -jar 10-nativos-dijeron.jar
+Para ejecutar la aplicacion debemos hacer doble click sobre el archivo `ejecutar_en_windwos.bat` 
+
 
 ### MODIFICACION DE LAS PREGUNTAS
 - abrir la carpeta 'SRC'
