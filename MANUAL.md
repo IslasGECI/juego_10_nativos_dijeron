@@ -5,7 +5,7 @@ _Este es el manual de instalación del juego _10 nativos dijeron_. Aquí veremos
 ### Pre-requisitos del sistema 📋
 
 _Qué cosas necesitas tener antes de poder ejecutar la aplicación:_
-- Tener un sistema operativos (windows, ubuntu, macOs)
+- Tener un sistema operativo windows, ubuntu ó macOS
 - [Tener java Jre8 Instalado](https://www.oracle.com/mx/java/technologies/javase-jre8-downloads.html)
 
 
