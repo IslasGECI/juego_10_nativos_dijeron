@@ -1,4 +1,4 @@
-# Manual de instalacion y ejecución
+# Manual de instalación y ejecución
 
 _Este es el manual de instalación del juego _10 nativos dijeron_. Aquí veremos los pre-requisitos de sistema para poder instalar y ejecutar esta aplicacion, así como las instrucciones para hacerlo._
 
@@ -11,13 +11,17 @@ _Qué cosas necesitas tener antes de poder ejecutar la aplicación:_
 
 ### Instalación 🔧
 
-Teniendo un archivo 'aplicacion.zip'
-El cual contendra tres cosas (carpeta que contiene el excel, el ejecutable, las instalaciones de java)
-- Carpeta 10 nativos:
-- src/surveys.xlsx
-- 10-nativos-dijeron.jar
-- instalaciones de java con 2 instalaciones para x64 y x86
-- ejecutar en windows.bat
+La aplicación del juego _10 nativos dijeron_ se encuentra dentro del archivo comprimido 'aplicacion.zip'.
+Dentro del comprimido tenemos lo siguiente:
+
+1. Carpeta que contiene el excel: `carpeta/archivo_de_excel.xlsx`
+1. Ejecutable: `aplicación.exe`
+1. Instalaciones de java: `nombre del archivo`
+Dentro de la carpeta 10 nativos se encuentran los siguientes archivos:
+- `src/surveys.xlsx`
+- `10-nativos-dijeron.jar`
+- Instalaciones de java (instalaciones para x64 y x86)
+- `windows.bat`
 
 ### Ejecución 🕹
 Para ejecutar la aplicacion debemos hacer doble click sobre el archivo `ejecutar_en_windows.bat` 
