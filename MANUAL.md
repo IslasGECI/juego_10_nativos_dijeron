@@ -29,9 +29,8 @@ Posteriormente, debemos hacer doble click sobre el archivo `ejecutar_en_windows.
 
 
 ### Instrucciones para modificar las preguntas del juego de 10 nativos dijeron
-- abrir la carpeta 'SRC'
-- abrir el archivo de excel "survey.xlsx"
-- aqui se podran hacer modificaciones a las preguntas deseadas
+1. Abrir la carpeta 'SRC'
+2. Abrir el archivo de excel "survey.xlsx". Aqui se podran modificar, agregar o quitar las preguntas deseadas.
 
 ---
 con ❤️ por el equipo de Ciencia de Datos de GECI 😊
