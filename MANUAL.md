@@ -24,10 +24,11 @@ Dentro de la carpeta 10 nativos se encuentran los siguientes archivos:
 - `windows.bat`
 
 ### Ejecución 🕹
-Para ejecutar la aplicacion debemos hacer doble click sobre el archivo `ejecutar_en_windows.bat` 
+Para ejecutar la aplicacion primero debemos de extraer el contenido del archivo `aplicacion.zip`.
+Posteriormente, debemos hacer doble click sobre el archivo `ejecutar_en_windows.bat` 
 
 
-### MODIFICACION DE LAS PREGUNTAS
+### Instrucciones para modificar las preguntas del juego de 10 nativos dijeron
 - abrir la carpeta 'SRC'
 - abrir el archivo de excel "survey.xlsx"
 - aqui se podran hacer modificaciones a las preguntas deseadas
