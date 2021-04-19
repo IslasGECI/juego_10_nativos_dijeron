@@ -4,7 +4,7 @@ _Este es el manual de instalación del juego _10 nativos dijeron_. Aquí veremos
 
 ### Pre-requisitos del sistema 📋
 
-_Qué cosas necesitas tener antes de poder ejecutar la aplicación:_
+_Cosas que necesitas tener antes de poder ejecutar la aplicación:_
 - Tener un sistema operativo windows, ubuntu ó macOS
 - [Tener java Jre8 Instalado](https://www.oracle.com/mx/java/technologies/javase-jre8-downloads.html)
 
@@ -16,7 +16,6 @@ Dentro del comprimido tenemos lo siguiente:
 
 1. Carpeta que contiene el excel: `carpeta/archivo_de_excel.xlsx`
 1. Ejecutable: `aplicación.exe`
-1. Instalaciones de java: `nombre del archivo`
 Dentro de la carpeta 10 nativos se encuentran los siguientes archivos:
 - `src/surveys.xlsx`
 - `10-nativos-dijeron.jar`
