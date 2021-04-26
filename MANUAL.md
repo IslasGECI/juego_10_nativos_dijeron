@@ -1,20 +1,20 @@
 # Manual de instalación y ejecución
 
-Este es el manual de instalación del juego _10 isleños dijeron_. Aquí veremos los pre-requisitos de sistema para poder instalar y ejecutar esta aplicación, así como las instrucciones para hacerlo.
+Este es el manual de instalación del juego _10 nativos dijeron_. Aquí veremos los pre-requisitos de sistema para poder instalar y ejecutar esta aplicación, así como las instrucciones para hacerlo.
 
 ### Pre-requisitos del sistema 📋
 
 Cosas que necesitas tener antes de poder ejecutar la aplicación:
 - Tener un sistema operativo windows, ubuntu ó macOS
-- [Descargar el comprimido de la aplicación llamado `10 isleños dijeron.zip`](https://drive.google.com/file/d/1HZ3-3eFd9Eqhr25x3BohHmzpRPeqenEu/view?usp=sharing)
+- Descargar el comprimido de la aplicación llamado [`10 nativos dijeron.zip`](https://drive.google.com/file/d/1HZ3-3eFd9Eqhr25x3BohHmzpRPeqenEu/view?usp=sharing)
 - [Tener java Jre8 instalado](https://drive.google.com/file/d/1fsPZxkXY4lly9LJyNBw0ZrnrhmdTVgRX/view?usp=sharing)
 
 
 ### Instalación 🔧
 
-La aplicación del juego _10 isleños dijeron_ se encuentra dentro del archivo comprimido llamado `10 isleños dijeron.zip`.
+La aplicación del juego _10 nativos dijeron_ se encuentra dentro del archivo comprimido llamado `10 nativos dijeron.zip`.
 A continuación se muestran las instrucciones para descomprimir este archivo:
-1. Ubicar el archivo descargado `10 isleños dijeron.zip`
+1. Ubicar el archivo descargado `10 nativos dijeron.zip`
 
 <p align="center">
 <img
@@ -30,11 +30,11 @@ width="400" height="200">
 
 ![image](https://user-images.githubusercontent.com/9456708/115905916-aab51b00-a41b-11eb-8807-9aa49dc77d34.png)
 
-Una vez descomprimido obtendremos una carpeta llamada `10 isleños dijeron`.
+Una vez descomprimido obtendremos una carpeta llamada `10 nativos dijeron`.
 
-Dentro de la carpeta `10 isleños dijeron` se encuentran los siguientes archivos:
+Dentro de la carpeta `10 nativos dijeron` se encuentran los siguientes archivos:
 - `src/surveys.xlsx`
-- `10-isleños-dijeron.jar`
+- `10-nativos-dijeron.jar`
 - `Ejecutar en Windows.bat`
 - `Ejecutar en Linux.sh`
 - `verificador.bat`
@@ -42,10 +42,10 @@ Dentro de la carpeta `10 isleños dijeron` se encuentran los siguientes archivos
 ![image](https://user-images.githubusercontent.com/9456708/115907538-dfc26d00-a41d-11eb-85d5-decc9257fd22.png)
 
 ### Ejecución 🕹
-Entrar a la carpeta `10 isleños dijeron` que extrajimos anteriormente y dependiendo de nuestro sistema operativo haremos lo siguiente:
+Entrar a la carpeta `10 nativos dijeron` que extrajimos anteriormente y dependiendo de nuestro sistema operativo haremos lo siguiente:
 
 #### Windows
-- Dentro de la carpeta `10 isleños dijeron`, hacer doble click sobre el archivo `Ejecutar en Windows.bat` 
+- Dentro de la carpeta `10 nativos dijeron`, hacer doble click sobre el archivo `Ejecutar en Windows.bat` 
 - Si es la primera vez ejecutando la aplicación, aparecerá la siguiente ventana:
 
 ![image](https://user-images.githubusercontent.com/9456708/115908158-a5a59b00-a41e-11eb-9314-467fbb4fee34.png)
@@ -65,7 +65,7 @@ Seleccionar `Ejecutar de todas formas`.
 ![image](https://user-images.githubusercontent.com/9456708/115908785-75123100-a41f-11eb-8ade-0d9813b12b27.png)
 
 #### Linux:
-- Abrir una terminal en la dirección de la carpeta `10 isleños dijeron`
+- Abrir una terminal en la dirección de la carpeta `10 nativos dijeron`
 - Ejecutar el siguiente comando:
 
 ```bash
@@ -89,7 +89,7 @@ Si la aplicación se ejecutó de forma correcta, la veremos de la siguiente form
 manual, donde podremos ver nuestra aplicación ejecutandose. De lo contrario algún problema debió
 haber ocurrido y debemos notificarlo con equipo de Ciencia de Datos.
 
-### Instrucciones para modificar las preguntas del juego de _10 isleños dijeron_
+### Instrucciones para modificar las preguntas del juego de _10 nativos dijeron_
 Esta sección está planeada para que sepamos cómo modificar y agregar nuevas preguntas en el excel
 que posteriormente son cargadas en la aplicación:
 1. Abrir la carpeta `src`
