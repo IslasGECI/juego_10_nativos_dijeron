@@ -16,6 +16,10 @@ La aplicación del juego _10 nativos dijeron_ se encuentra dentro del archivo co
 A continuacion se muestran las instrucciones para descomprimir este archivo:
 1. Ubicar el archivo descargado llamado `10 nativos dijeron.zip`
 
+<img
+src="https://user-images.githubusercontent.com/9456708/115905363-daafee80-a41a-11eb-9b2d-81e1a5f977de.png"
+width="400" height="200">
+
 ![image](https://user-images.githubusercontent.com/9456708/115905363-daafee80-a41a-11eb-9b2d-81e1a5f977de.png)
 
 
