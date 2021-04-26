@@ -97,11 +97,11 @@ que posteriormente son cargadas en la aplicación:
 
 ![image](https://user-images.githubusercontent.com/9456708/115909323-392b9b80-a420-11eb-8adb-1f2689be8c10.png)
 
-<sup>1</sup> Debemos tener el archivo de Excel cerrado cuando ejecutemos la aplicación.
+<sup>1</sup> Debemos tener el archivo de excel cerrado cuando ejecutemos la aplicación.
 
-<sup>2</sup> Si queremos modificar las preguntas no debemos tener la aplicación en ejecución.
+<sup>2</sup> Durante la modificación de preguntas, no debemos tener la aplicación en ejecución.
 
-<sup>3</sup> Siempre debemos guardar el archivo de Excel despues de agregar o modificar una pregunta.
+<sup>3</sup> Siempre debemos guardar el archivo de excel despues de agregar o modificar una pregunta.
 
 ---
 Con ❤️, el equipo de Ciencia de Datos de GECI 😊
