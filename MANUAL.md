@@ -88,7 +88,7 @@ width="300">
 <p align="center">
 <img
 src="https://user-images.githubusercontent.com/9456708/115908785-75123100-a41f-11eb-8ade-0d9813b12b27.png"
-width="400">
+width="450">
 </p>
 
 #### Linux:
@@ -112,7 +112,7 @@ Si la aplicación se ejecutó de forma correcta, la veremos de la siguiente form
 <p align="center">
 <img
 src="https://user-images.githubusercontent.com/9456708/115908995-bb679000-a41f-11eb-9071-c68a7409e968.png"
-width="450">
+width="550">
 </p>
 
 <sup>1</sup> Si la página no aparece automaticamente, podemos ir a la dirección anterior de manera
@@ -128,7 +128,7 @@ que posteriormente son cargadas en la aplicación:
 <p align="center">
 <img
 src="https://user-images.githubusercontent.com/9456708/115909323-392b9b80-a420-11eb-8adb-1f2689be8c10.png"
-width="450">
+width="550">
 </p>
 
 <sup>1</sup> Debemos tener el archivo de excel cerrado cuando ejecutemos la aplicación.
