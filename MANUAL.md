@@ -18,17 +18,24 @@ A continuación se muestran las instrucciones para descomprimir este archivo:
 
 <p align="center">
 <img
-src="https://user-images.githubusercontent.com/9456708/115905363-daafee80-a41a-11eb-9b2d-81e1a5f977de.png"
-width="400" height="200">
+src="https://user-images.githubusercontent.com/9456708/115905363-daafee80-a41a-11eb-9b2d-81e1a5f977de.png" width="400">
 </p>
 
 2. Hacer click derecho sobre el archivo y seleccionar `extraer todo`
 
-![image](https://user-images.githubusercontent.com/9456708/115905851-8c4f1f80-a41b-11eb-9ee0-0bd7d1aa61d6.png)
+<p align="center">
+<img
+src="https://user-images.githubusercontent.com/9456708/115905851-8c4f1f80-a41b-11eb-9ee0-0bd7d1aa61d6.png"
+width="450">
+</p>
 
 3. Elegir la carpeta en la que extraeremos los archivos y seleccionar la opción `extraer`
 
-![image](https://user-images.githubusercontent.com/9456708/115905916-aab51b00-a41b-11eb-8807-9aa49dc77d34.png)
+<p align="center">
+<img
+src="https://user-images.githubusercontent.com/9456708/115905916-aab51b00-a41b-11eb-8807-9aa49dc77d34.png"
+width="550">
+</p>
 
 Una vez descomprimido obtendremos una carpeta llamada `10 nativos dijeron`.
 
@@ -39,7 +46,11 @@ Dentro de la carpeta `10 nativos dijeron` se encuentran los siguientes archivos:
 - `Ejecutar en Linux.sh`
 - `verificador.bat`
 
-![image](https://user-images.githubusercontent.com/9456708/115907538-dfc26d00-a41d-11eb-85d5-decc9257fd22.png)
+<p align="center">
+<img
+src="https://user-images.githubusercontent.com/9456708/115907538-dfc26d00-a41d-11eb-85d5-decc9257fd22.png"
+width="400">
+</p>
 
 ### Ejecución 🕹
 Entrar a la carpeta `10 nativos dijeron` que extrajimos anteriormente y dependiendo de nuestro sistema operativo haremos lo siguiente:
@@ -48,21 +59,37 @@ Entrar a la carpeta `10 nativos dijeron` que extrajimos anteriormente y dependie
 - Dentro de la carpeta `10 nativos dijeron`, hacer doble click sobre el archivo `Ejecutar en Windows.bat` 
 - Si es la primera vez ejecutando la aplicación, aparecerá la siguiente ventana:
 
-![image](https://user-images.githubusercontent.com/9456708/115908158-a5a59b00-a41e-11eb-9314-467fbb4fee34.png)
+<p align="center">
+<img
+src="https://user-images.githubusercontent.com/9456708/115908158-a5a59b00-a41e-11eb-9314-467fbb4fee34.png"
+width="450">
+</p>
 
 - Al seleccionar la opción `Más información` aparecerá el siguiente mensaje:
 
-![image](https://user-images.githubusercontent.com/9456708/115908201-b6eea780-a41e-11eb-86bc-d91365b19794.png)
+<p align="center">
+<img
+src="https://user-images.githubusercontent.com/9456708/115908201-b6eea780-a41e-11eb-86bc-d91365b19794.png"
+width="300">
+</p>
 
 Seleccionar `Ejecutar de todas formas`.
 
 - La ventana emergente solicitará acceso para la aplicación java, hacer click en `Permitir Acceso`:
- 
-![image](https://user-images.githubusercontent.com/9456708/115612776-7a953d00-a2a0-11eb-9e12-2e7e42d02dc8.png)
+
+<p align="center">
+<img
+src="https://user-images.githubusercontent.com/9456708/115612776-7a953d00-a2a0-11eb-9e12-2e7e42d02dc8.png"
+width="300">
+</p>
 
 - Si todo salió bien, obtedremos lo siguiente:
 
-![image](https://user-images.githubusercontent.com/9456708/115908785-75123100-a41f-11eb-8ade-0d9813b12b27.png)
+<p align="center">
+<img
+src="https://user-images.githubusercontent.com/9456708/115908785-75123100-a41f-11eb-8ade-0d9813b12b27.png"
+width="400">
+</p>
 
 #### Linux:
 - Abrir una terminal en la dirección de la carpeta `10 nativos dijeron`
@@ -82,8 +109,11 @@ Posterior a la ejecución, se nos abrirá automaticamente el navegador con la si
 
 Si la aplicación se ejecutó de forma correcta, la veremos de la siguiente forma<sup>1</sup>:
 
-![image](https://user-images.githubusercontent.com/9456708/115908995-bb679000-a41f-11eb-9071-c68a7409e968.png)
-
+<p align="center">
+<img
+src="https://user-images.githubusercontent.com/9456708/115908995-bb679000-a41f-11eb-9071-c68a7409e968.png"
+width="450">
+</p>
 
 <sup>1</sup> Si la página no aparece automaticamente, podemos ir a la dirección anterior de manera
 manual, donde podremos ver nuestra aplicación ejecutandose. De lo contrario algún problema debió
@@ -92,11 +122,14 @@ haber ocurrido y debemos notificarlo con equipo de Ciencia de Datos.
 ### Instrucciones para modificar las preguntas del juego de _10 nativos dijeron_
 Esta sección está planeada para que sepamos cómo modificar y agregar nuevas preguntas en el excel
 que posteriormente son cargadas en la aplicación:
-1. Abrir la carpeta `src`
+1. Dentro de la carpeta `10 nativos dijeron`, abrir la carpeta `src`
 2. Abrir el archivo de excel `survey.xlsx`. Aquí podremos modificar<sup>1-</sup><sup>2-</sup><sup>3</sup>, agregar o quitar las preguntas deseadas de acuerdo al siguiente ejemplo:
 
-
-![image](https://user-images.githubusercontent.com/9456708/115909323-392b9b80-a420-11eb-8adb-1f2689be8c10.png)
+<p align="center">
+<img
+src="https://user-images.githubusercontent.com/9456708/115909323-392b9b80-a420-11eb-8adb-1f2689be8c10.png"
+width="450">
+</p>
 
 <sup>1</sup> Debemos tener el archivo de excel cerrado cuando ejecutemos la aplicación.
 
