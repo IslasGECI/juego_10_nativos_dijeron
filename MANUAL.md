@@ -127,7 +127,7 @@ que posteriormente son cargadas en la aplicación:
 
 <p align="center">
 <img
-src="https://user-images.githubusercontent.com/9456708/115909323-392b9b80-a420-11eb-8adb-1f2689be8c10.png"
+src="https://user-images.githubusercontent.com/56838850/116309958-46b58e00-a75e-11eb-942b-da724dd5589b.png"
 width="550">
 </p>
 
