@@ -2,7 +2,7 @@
 
 Este es el manual de instalación del juego _10 nativos dijeron_. Aquí veremos los pre-requisitos de sistema para poder instalar y ejecutar esta aplicación, así como las instrucciones para hacerlo.
 
-### Pre-requisitos del sistema 📋
+### 📋 Pre-requisitos del sistema
 
 Cosas que necesitas tener antes de poder ejecutar la aplicación:
 - Tener un sistema operativo windows, ubuntu ó macOS
@@ -10,7 +10,7 @@ Cosas que necesitas tener antes de poder ejecutar la aplicación:
 - [Tener java JRE 8 instalado](https://drive.google.com/file/d/1fsPZxkXY4lly9LJyNBw0ZrnrhmdTVgRX/view?usp=sharing)
 
 
-### Instalación 🔧
+### 🔧 Instalación
 
 La aplicación del juego _10 nativos dijeron_ se encuentra dentro del archivo comprimido llamado `10 nativos dijeron.zip`.
 A continuación se muestran las instrucciones para descomprimir este archivo:
@@ -52,7 +52,7 @@ src="https://user-images.githubusercontent.com/56838850/116308209-18cf4a00-a75c-
 width="500">
 </p>
 
-### Ejecución 🕹
+### 🕹 Ejecución
 Entrar a la carpeta `10 nativos dijeron` que extrajimos anteriormente y dependiendo de nuestro sistema operativo haremos lo siguiente:
 
 #### Windows
@@ -102,7 +102,7 @@ $ ./'Ejecutar en Linux.sh'
 #### MacOs:
 - Aún por definir.
 
-### Visualización de la aplicación
+### 👓 Visualización de la aplicación
 Posterior a la ejecución, se nos abrirá automaticamente el navegador con la siguiente página:
 
 [http://localhost:8080/](http://localhost:8080/)
@@ -119,7 +119,7 @@ width="550">
 manual, donde podremos ver nuestra aplicación ejecutandose. De lo contrario algún problema debió
 haber ocurrido y debemos notificarlo con equipo de Ciencia de Datos.
 
-### Instrucciones para modificar las preguntas del juego de _10 nativos dijeron_
+### ✏️ Instrucciones para modificar las preguntas del juego de _10 nativos dijeron_ 
 Esta sección está planeada para que sepamos cómo modificar y agregar nuevas preguntas en el excel
 que posteriormente son cargadas en la aplicación:
 1. Dentro de la carpeta `10 nativos dijeron`, abrir la carpeta `src`
