@@ -7,7 +7,7 @@ Este es el manual de instalación del juego _10 nativos dijeron_. Aquí veremos 
 Cosas que necesitas tener antes de poder ejecutar la aplicación:
 - Tener un sistema operativo windows, ubuntu ó macOS
 - Descargar el comprimido de la aplicación llamado [`10 nativos dijeron.zip`](https://drive.google.com/file/d/1HZ3-3eFd9Eqhr25x3BohHmzpRPeqenEu/view?usp=sharing)
-- [Tener java Jre8 instalado](https://drive.google.com/file/d/1fsPZxkXY4lly9LJyNBw0ZrnrhmdTVgRX/view?usp=sharing)
+- [Tener java JRE 8 instalado](https://drive.google.com/file/d/1fsPZxkXY4lly9LJyNBw0ZrnrhmdTVgRX/view?usp=sharing)
 
 
 ### Instalación 🔧
