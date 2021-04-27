@@ -34,7 +34,7 @@ width="450">
 <p align="center">
 <img
 src="https://user-images.githubusercontent.com/56838850/116308021-d9a0f900-a75b-11eb-991b-33d4821108f5.png"
-width="550">
+width="450">
 </p>
 
 Una vez descomprimido obtendremos una carpeta llamada `10 nativos dijeron`.
@@ -49,7 +49,7 @@ Dentro de la carpeta `10 nativos dijeron` se encuentran los siguientes archivos:
 <p align="center">
 <img
 src="https://user-images.githubusercontent.com/56838850/116308209-18cf4a00-a75c-11eb-8ee0-2ed41869af4f.png"
-width="400">
+width="500">
 </p>
 
 ### Ejecución 🕹
