@@ -18,14 +18,15 @@ A continuación se muestran las instrucciones para descomprimir este archivo:
 
 <p align="center">
 <img
-src="https://user-images.githubusercontent.com/9456708/115905363-daafee80-a41a-11eb-9b2d-81e1a5f977de.png" width="400">
+src="https://user-images.githubusercontent.com/56838850/116307682-7fa03380-a75b-11eb-9f51-cbd6cf81037c.png" width="400">
 </p>
 
 2. Hacer click derecho sobre el archivo y seleccionar `extraer todo`
 
 <p align="center">
 <img
-src="https://user-images.githubusercontent.com/9456708/115905851-8c4f1f80-a41b-11eb-9ee0-0bd7d1aa61d6.png"
+src="https://user-images.githubusercontent.com/56838850/116307850-ac544b00-a75b-11eb-8c92-c70df1dd2ea6.png
+"
 width="450">
 </p>
 
@@ -33,7 +34,7 @@ width="450">
 
 <p align="center">
 <img
-src="https://user-images.githubusercontent.com/9456708/115905916-aab51b00-a41b-11eb-8807-9aa49dc77d34.png"
+src="!https://user-images.githubusercontent.com/56838850/116308021-d9a0f900-a75b-11eb-991b-33d4821108f5.png"
 width="550">
 </p>
 
@@ -48,7 +49,7 @@ Dentro de la carpeta `10 nativos dijeron` se encuentran los siguientes archivos:
 
 <p align="center">
 <img
-src="https://user-images.githubusercontent.com/9456708/115907538-dfc26d00-a41d-11eb-85d5-decc9257fd22.png"
+src="https://user-images.githubusercontent.com/56838850/116308209-18cf4a00-a75c-11eb-8ee0-2ed41869af4f.png"
 width="400">
 </p>
 
