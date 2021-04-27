@@ -88,7 +88,7 @@ width="300">
 <p align="center">
 <img
 src="https://user-images.githubusercontent.com/9456708/115908785-75123100-a41f-11eb-8ade-0d9813b12b27.png"
-width="450">
+width="550">
 </p>
 
 #### Linux:
